@@ -2,8 +2,11 @@
 phpMyAdmin - ChangeLog
 ----------------------
 
-$Id: ChangeLog 11683 2008-10-30 12:47:24Z lem9 $
+$Id: ChangeLog 12102 2008-12-09 14:03:57Z nijel $
 $HeadURL: https://phpmyadmin.svn.sourceforge.net/svnroot/phpmyadmin/trunk/phpMyAdmin/ChangeLog $
+
+2.11.9.4 (2008-12-09)
+- [security] possible XSRF on several pages
 
 2.11.9.3 (2008-10-30)
 - [security] XSS in a Designer component 

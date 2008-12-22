@@ -1,3 +1,10 @@
+2008-12-14  Andreas Kundoch  <typo3@mehrwert.de>
+	* Version 3.4.3
+	* Security: Security fix (PMASA-2008-10): SQL injection through XSRF on several pages
+	* Feature: Updated pMA to the latest stable release (2.11.9.4)
+	* Changed extension config: Set 'clearcacheonload' to 0
+	* Renamed ChangeLog to ChangeLog.txt
+
 2008-11-01  Andreas Kundoch  <typo3@mehrwert.de>
 	* Version 3.4.2
 	* Updated pMA to the latest stable release (2.11.9.3)

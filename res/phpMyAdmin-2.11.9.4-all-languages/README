@@ -1,11 +1,11 @@
-$Id: README 11688 2008-10-30 20:40:33Z lem9 $
+$Id: README 12106 2008-12-09 17:03:54Z lem9 $
 
 phpMyAdmin - Readme
 ===================
 
   A set of PHP-scripts to manage MySQL over the web.
 
-  Version 2.11.9.3
+  Version 2.11.9.4
   ----------------
   http://www.phpmyadmin.net/
 
