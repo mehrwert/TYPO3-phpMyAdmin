@@ -23,6 +23,6 @@ if (TYPO3_MODE == 'BE') {
 $TYPO3_CONF_VARS['SC_OPTIONS']['t3lib/class.t3lib_userauth.php']['logoff_post_processing'][] = 'tx_phpmyadmin_utilities->pmaLogOff';
 
 // The subdirectory where the pMA source is located (used for cookie removal and script inclusion)
-$TYPO3_CONF_VARS['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-2.11.9.4-all-languages';
+$TYPO3_CONF_VARS['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-2.11.9.5-all-languages';
 
 ?>

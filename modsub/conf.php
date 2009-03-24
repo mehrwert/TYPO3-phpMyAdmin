@@ -9,7 +9,7 @@ $MCONF['name'] = 'tools_txphpmyadmin';
 $MCONF['script'] = 'index.php';
 $MCONF['access'] = 'admin';
 
-$MCONF['phpMyAdminSubDir'] = '../res/phpMyAdmin-2.11.9.4-all-languages/';
+$MCONF['phpMyAdminSubDir'] = '../res/phpMyAdmin-2.11.9.5-all-languages/';
 $MCONF['phpMyAdminScript'] = 'index.php';
 
 $MLANG['default']['tabs_images']['tab'] = 'thirdparty_db.gif';

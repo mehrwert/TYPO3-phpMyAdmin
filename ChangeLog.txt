@@ -1,3 +1,8 @@
+2009-03-24  Andreas Kundoch  <typo3@mehrwert.de>
+	* Version 3.4.4
+	* Security: Security fix (PMASA-2009-3): Insufficient output sanitizing when generating configuration file. 
+	* Feature: Updated pMA to the latest stable release (2.11.9.5)
+
 2008-12-14  Andreas Kundoch  <typo3@mehrwert.de>
 	* Version 3.4.3
 	* Security: Security fix (PMASA-2008-10): SQL injection through XSRF on several pages

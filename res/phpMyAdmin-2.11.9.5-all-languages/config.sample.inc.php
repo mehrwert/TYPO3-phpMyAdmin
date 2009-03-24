@@ -5,9 +5,9 @@
  * manual configuration. For easier setup you can use scripts/setup.php
  *
  * All directives are explained in Documentation.html and on phpMyAdmin
- * wiki <http://wiki.cihar.com>.
+ * wiki <http://wiki.phpmyadmin.net>.
  *
- * @version $Id: config.sample.inc.php 10142 2007-03-20 10:32:13Z cybot_tm $
+ * @version $Id: config.sample.inc.php 12304 2009-03-24 12:56:58Z nijel $
  */
 
 /*
