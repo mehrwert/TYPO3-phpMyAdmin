@@ -172,9 +172,14 @@ class SC_mod_tools_phpadmin_index {
 	}
 }
 
-// Make instance:
-$SOBE = t3lib_div::makeInstance('SC_mod_tools_phpadmin_index');
-$SOBE->main();
-$SOBE->printContent();
+// Proceed if BE loaded
+if (in_array('t3lib_div', get_declared_classes())) {
+	// Make instance:
+	$SOBE = t3lib_div::makeInstance('SC_mod_tools_phpadmin_index');
+	$SOBE->main();
+	$SOBE->printContent();
+} else {
+	echo '<h1>Error</h1><p>The TYPO3 Backend is required for phpMyAdmin module but was not loaded.</p>';
+}
 
 ?>

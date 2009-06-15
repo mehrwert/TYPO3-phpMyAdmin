@@ -1,3 +1,8 @@
+2009-06-15  Andreas Kundoch  <typo3@mehrwert.de>
+	* Version 4.4.0
+	* Feature: Updated pMA to the latest stable release (3.2.0)
+	* Fixed a bug: Logoff in 4.3.x did not work since directory name was wrong
+
 2009-03-24  Andreas Kundoch  <typo3@mehrwert.de>
 	* Version 4.3.0
 	* Security: Security fix (PMASA-2009-3): Insufficient output sanitizing when generating configuration file. 
