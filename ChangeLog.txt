@@ -1,3 +1,9 @@
+2009-10-15  Andreas Kundoch  <typo3@mehrwert.de>
+	* Version 4.5.0
+	* Security: Security fix (PMASA-2009-6): XSS and SQL injection vulnerabilities
+	* Feature: Updated pMA to the latest stable release (3.2.2.1)
+	* Feature: Updated the manual to latest documentation template
+
 2009-06-15  Andreas Kundoch  <typo3@mehrwert.de>
 	* Version 4.4.0
 	* Feature: Updated pMA to the latest stable release (3.2.0)
