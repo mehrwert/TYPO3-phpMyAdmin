@@ -1,3 +1,10 @@
+2009-11-19  Andreas Kundoch  <typo3@mehrwert.de>
+	* Version 4.6.0
+	* Fixed #12056: Wrong calculation of $BACK_PATH
+	* Workaround for #12057: Empty MySQL password blocks EXT:phpmyadmin
+	* Feature: Updated pMA to the latest stable release (3.2.3)
+	* Feature: Added custom TYPO3 theme
+
 2009-10-15  Andreas Kundoch  <typo3@mehrwert.de>
 	* Version 4.5.0
 	* Security: Security fix (PMASA-2009-6): XSS and SQL injection vulnerabilities

@@ -67,98 +67,123 @@ class SC_mod_tools_phpadmin_index {
 	 */
 	public function main() {
 
-		// Declare globals
+			// Declare globals
 		global $BE_USER,$LANG,$BACK_PATH,$TCA_DESCR,$TCA,$CLIENT,$TYPO3_CONF_VARS;
 
-		// Set class config for module
+			// Set class config for module
 		$this->MCONF = $GLOBALS['MCONF'];
 
-		// Get config
-		$extensionConfiguration = unserialize($TYPO3_CONF_VARS['EXT']['extConf']['phpmyadmin']);
+			// Check for empty password and issues a warning since
+			// phpMyAdmin ignores the cfg-option AllowNoPassword
+		if (TYPO3_db_password == '') {
 
-		// Path to install dir
-		$this->MCONF['PMA_absolute_path'] = t3lib_extMgm::extPath('phpmyadmin').$this->MCONF['PMA_subdir'];
-
-		// Path to web dir
-		$this->MCONF['PMA_relative_path'] = t3lib_extMgm::extRelPath('phpmyadmin').$this->MCONF['PMA_subdir'];
-
-		// If phpMyAdmin is configured in the conf.php script, we continue to load it...
-		if ($this->MCONF['PMA_absolute_path'] && @is_dir($this->MCONF['PMA_absolute_path'])) {
-
-			// Need to have cookie visible from parent directory
-			session_set_cookie_params(0, '/', '', 0);
-
-			// Create signon session
-			$session_name = 'tx_phpmyadmin';
-			session_name($session_name);
-			session_start();
-
-			// Store there credentials in the session
-			$_SESSION['PMA_single_signon_user'] = TYPO3_db_username;
-			$_SESSION['PMA_single_signon_password'] = TYPO3_db_password;
-			$_SESSION['PMA_single_signon_host'] = TYPO3_db_host;
-			$_SESSION['PMA_single_signon_only_db'] = TYPO3_db;
-
-			// Configure some other parameters
-			$_SESSION['PMA_extConf'] = $TYPO3_CONF_VARS['EXT']['extConf']['phpmyadmin'];
-			$_SESSION['PMA_hideOtherDBs'] = $extensionConfiguration['hideOtherDBs'];
-
-			// Try to get the TYPO3 backend uri even if it's installed in a subdirectory
-			$typo3_uri = substr($_SERVER['SCRIPT_FILENAME'], strlen($_SERVER['DOCUMENT_ROOT']) - 1, strlen(basename($_SERVER['SCRIPT_FILENAME'])));
-			$_SESSION['PMA_SignonURL'] = $typo3_uri.'/index.php';
-			$_SESSION['PMA_LogoutURL'] = $typo3_uri.'/logout.php';
-
-			// Prepend document root if uploadDir does not start with a slash "/"
-			$extensionConfiguration['uploadDir'] = trim($extensionConfiguration['uploadDir']);
-			if (strpos($extensionConfiguration['uploadDir'], '/') !== 0) {
-				$_SESSION['PMA_uploadDir'] = $_SERVER['DOCUMENT_ROOT'].'/'.$extensionConfiguration['uploadDir'];
-			} else {
-				$_SESSION['PMA_uploadDir'] = $extensionConfiguration['uploadDir'];
-			}
-			$_SESSION['PMA_typo_db'] = TYPO3_db;
-
-			$id = session_id();
-
-			// Force to set the cookie according to issue #8884
-			// http://bugs.typo3.org/view.php?id=8884#c23323
-			setcookie($session_name, $id, 0, '/', '');
-
-			// Close that session
-			session_write_close();
-
-			// Mapping language keys for phpMyAdmin
-			$LANG_KEY_MAP = array(
-				'dk'=>'da',
-				'de'=>'de',
-				'no'=>'no',
-				'it'=>'it',
-				'fr'=>'fr',
-				'es'=>'es',
-				'nl'=>'nl',
-				'cz'=>'cs-iso',
-				'pl'=>'pl',
-				'si'=>'sk'
-			);
-
-			$LANG_KEY = $LANG_KEY_MAP[$LANG->lang];
-			if (!$LANG_KEY) {
-				$LANG_KEY = 'en';
-			}
-
-			// Redirect to phpMyAdmin (should use absolute URL here!), setting default database
-			$redirect = $this->MCONF['PMA_relative_path'].$this->MCONF['PMA_script'].'?lang='.$LANG_KEY.'&db='.urlencode(TYPO3_db);
-			header('Location: '.$redirect);
-
-		} else {
-			// No configuration set:
+				// No password in configuration set
 			$this->doc = t3lib_div::makeInstance('mediumDoc');
 			$this->doc->backPath = $BACK_PATH;
 			$this->content = $this->doc->startPage($LANG->getLL('title'));
-			$this->content .= ('
-				<h3>phpMyAdmin module was not installed?</h3>
-				'.($this->MCONF['PMA_subdir'] && !@is_dir($this->MCONF['PMA_subdir'])?'<hr /><strong>ERROR: The directory, '.$this->MCONF['PMA_subdir'].', was NOT found!</strong><HR>':'').'
-			');
+			$this->content .= (
+				'<h1>An error occured!</h1>
+				 <p><strong>Your MySQL user has no password set.</strong>
+					phpMyAdmin currently does not support empty passwords for MySQL users. 
+					Please set a password to use phpMyAdmin.
+				</p>'
+			);
 			$this->content .= $this->doc->endPage();
+		} else {
+
+			// Get config
+			$extensionConfiguration = unserialize($TYPO3_CONF_VARS['EXT']['extConf']['phpmyadmin']);
+
+			// Path to install dir
+			$this->MCONF['PMA_absolute_path'] = t3lib_extMgm::extPath('phpmyadmin').$this->MCONF['PMA_subdir'];
+
+			// Path to web dir
+			$this->MCONF['PMA_relative_path'] = t3lib_extMgm::extRelPath('phpmyadmin').$this->MCONF['PMA_subdir'];
+
+			// If phpMyAdmin is configured in the conf.php script, we continue to load it...
+			if ($this->MCONF['PMA_absolute_path'] && @is_dir($this->MCONF['PMA_absolute_path'])) {
+
+				// Need to have cookie visible from parent directory
+				session_set_cookie_params(0, '/', '', 0);
+
+				// Create signon session
+				$session_name = 'tx_phpmyadmin';
+				session_name($session_name);
+				session_start();
+
+				// Store there credentials in the session
+				$_SESSION['PMA_single_signon_user'] = TYPO3_db_username;
+				$_SESSION['PMA_single_signon_password'] = TYPO3_db_password;
+				$_SESSION['PMA_single_signon_host'] = TYPO3_db_host;
+				$_SESSION['PMA_single_signon_only_db'] = TYPO3_db;
+
+				// Configure some other parameters
+				$_SESSION['PMA_extConf'] = $TYPO3_CONF_VARS['EXT']['extConf']['phpmyadmin'];
+				$_SESSION['PMA_hideOtherDBs'] = $extensionConfiguration['hideOtherDBs'];
+
+				// Get signon uri for redirect
+				$signon_base_uri = '/'.t3lib_extMgm::siteRelPath('phpmyadmin').$this->MCONF['PMA_subdir'];
+				$_SESSION['PMA_SignonURL'] = $signon_base_uri.'index.php';
+
+				// Try to get the TYPO3 backend uri even if it's installed in a subdirectory
+				// Compile logout path and add a slash if the returned string does not start with
+				$path_typo3 = substr(PATH_typo3, strlen($_SERVER['DOCUMENT_ROOT']), strlen(PATH_typo3));
+				$path_typo3 = (substr($path_typo3, 0, 1) != '/'  ? '/'.$path_typo3 : $path_typo3);
+				$_SESSION['PMA_LogoutURL'] = $path_typo3.'logout.php';
+
+				// Prepend document root if uploadDir does not start with a slash "/"
+				$extensionConfiguration['uploadDir'] = trim($extensionConfiguration['uploadDir']);
+				if (strpos($extensionConfiguration['uploadDir'], '/') !== 0) {
+					$_SESSION['PMA_uploadDir'] = $_SERVER['DOCUMENT_ROOT'].'/'.$extensionConfiguration['uploadDir'];
+				} else {
+					$_SESSION['PMA_uploadDir'] = $extensionConfiguration['uploadDir'];
+				}
+				$_SESSION['PMA_typo_db'] = TYPO3_db;
+
+				$id = session_id();
+
+				// Force to set the cookie according to issue #8884
+				// http://bugs.typo3.org/view.php?id=8884#c23323
+				setcookie($session_name, $id, 0, '/', '');
+
+				// Close that session
+				session_write_close();
+
+				// Mapping language keys for phpMyAdmin
+				$LANG_KEY_MAP = array(
+					'dk'=>'da',
+					'de'=>'de',
+					'no'=>'no',
+					'it'=>'it',
+					'fr'=>'fr',
+					'es'=>'es',
+					'nl'=>'nl',
+					'cz'=>'cs-iso',
+					'pl'=>'pl',
+					'si'=>'sk'
+				);
+
+				$LANG_KEY = $LANG_KEY_MAP[$LANG->lang];
+				if (!$LANG_KEY) {
+					$LANG_KEY = 'en';
+				}
+
+				// Redirect to phpMyAdmin (should use absolute URL here!), setting default database
+				// $redirect = $this->MCONF['PMA_relative_path'].$this->MCONF['PMA_script']
+				$redirect = $signon_base_uri.'?lang='.$LANG_KEY.'&db='.urlencode(TYPO3_db);
+				header('Location: '.$redirect);
+
+			} else {
+				// No configuration set:
+				$this->doc = t3lib_div::makeInstance('mediumDoc');
+				$this->doc->backPath = $BACK_PATH;
+				$this->content = $this->doc->startPage($LANG->getLL('title'));
+				$this->content .= ('
+					<h3>phpMyAdmin module was not installed?</h3>
+					'.($this->MCONF['PMA_subdir'] && !@is_dir($this->MCONF['PMA_subdir'])?'<hr /><strong>ERROR: The directory, '.$this->MCONF['PMA_subdir'].', was NOT found!</strong><HR>':'').'
+				');
+				$this->content .= $this->doc->endPage();
+			}
 		}
 	}
 
