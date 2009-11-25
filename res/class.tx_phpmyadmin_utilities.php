@@ -55,10 +55,10 @@ class tx_phpmyadmin_utilities {
 	 */
 	function pmaLogOff($params = array(), $ref = null) {
 
-		// Define the cookie path
+			// Define the cookie path
 		$cookiePath = substr(t3lib_extmgm::extPath('phpmyadmin'), strlen($_SERVER['DOCUMENT_ROOT'])).'res/'.$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['phpmyadmin']['pmaDirname'].'/';
 
-		// Just ensure that the path is starting with a slash
+			// Just ensure that the path is starting with a slash
 		if (strpos($cookiePath, '/') !== 0) {
 			$cookiePath = '/'.$cookiePath;
 		}
@@ -70,15 +70,18 @@ class tx_phpmyadmin_utilities {
 		setcookie('phpMyAdmin', '', time() - 3600, '/');
 		setcookie('phpMyAdmin', '', time() - 3600, $cookiePath);
 
-		// Create signon session
+			// Create signon session
 		$session_name = 'tx_phpmyadmin';
 		session_name($session_name);
 		session_start();
 
-		// Try to get the TYPO3 backend uri even if it's installed in a subdirectory
-		$typo3_uri = substr($_SERVER['SCRIPT_FILENAME'], strlen($_SERVER['DOCUMENT_ROOT']) - 1, strlen(basename($_SERVER['SCRIPT_FILENAME'])));
-		$_SESSION['PMA_SignonURL'] = $typo3_uri.'/index.php';
-		$_SESSION['PMA_LogoutURL'] = $typo3_uri.'/logout.php';
+			// Try to get the TYPO3 backend uri even if it's installed in a subdirectory
+		$path_typo3 = substr(PATH_typo3, strlen($_SERVER['DOCUMENT_ROOT']), strlen(PATH_typo3));
+		$path_typo3 = (substr($path_typo3, 0, 1) != '/'  ? '/'.$path_typo3 : $path_typo3);
+
+		$_SESSION['PMA_LogoutURL'] = $path_typo3.'logout.php';
+		$_SESSION['PMA_SignonURL'] = $path_typo3.'index.php';
+		$_SESSION['PMA_LogoutURL'] = $path_typo3.'logout.php';
 
 		// Close that session
 		session_write_close();

@@ -82,6 +82,7 @@ $cfg['Servers'][$i]['verbose'] = 'TYPO3 DB Host';
 $cfg['Servers'][$i]['pmadb'] = 'tx_phpmyadmin';
 $cfg['Servers'][$i]['nopassword'] = true;
 $cfg['Servers'][$i]['AllowNoPasswordRoot'] = true;
+$cfg['Servers'][$i]['AllowNoPassword'] = true;
 $cfg['Servers'][$i]['auth_type'] = 'signon';
 $cfg['Servers'][$i]['SignonSession'] = 'tx_phpmyadmin';
 $cfg['Servers'][$i]['SignonURL'] = $extensionConfiguration['PMA_SignonURL'];

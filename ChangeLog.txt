@@ -1,9 +1,17 @@
+2009-11-25  Andreas Kundoch  <typo3@mehrwert.de>
+	* Version 4.7.1
+	* Fixed a bug: Fixed another issue with path calculation (works now for installations in subdirectories)
+	* Feature: Compatibility for TYPO3 4.3
+
 2009-11-19  Andreas Kundoch  <typo3@mehrwert.de>
-	* Version 4.6.0
+	* Version 4.7.0
 	* Fixed #12056: Wrong calculation of $BACK_PATH
 	* Workaround for #12057: Empty MySQL password blocks EXT:phpmyadmin
 	* Feature: Updated pMA to the latest stable release (3.2.3)
 	* Feature: Added custom TYPO3 theme
+
+2009-11-19  Andreas Kundoch  <typo3@mehrwert.de>
+	* Version 4.6.0 - was erroneously omitted during update and released as 4.7.0
 
 2009-10-15  Andreas Kundoch  <typo3@mehrwert.de>
 	* Version 4.5.0
