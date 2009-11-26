@@ -36,8 +36,6 @@
  *
  */
 
-require_once('/srv/www/t3dummy/v43/htdocs/some-weired-sub/dir-for-typo3/t3lib/class.t3lib_div.php');
-
 /**
  * Utilities for the phpMyAdmin third party database administration Tool
  *

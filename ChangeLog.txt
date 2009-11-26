@@ -1,3 +1,7 @@
+2009-11-26  Andreas Kundoch  <typo3@mehrwert.de>
+	* Version 4.7.2
+	* Fixed a bug: Removed erroneous require statement
+
 2009-11-25  Andreas Kundoch  <typo3@mehrwert.de>
 	* Version 4.7.1
 	* Fixed a bug: Fixed another issue with path calculation (works now for installations in subdirectories)
