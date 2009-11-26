@@ -1,6 +1,10 @@
 2009-11-26  Andreas Kundoch  <typo3@mehrwert.de>
+	* Version 4.7.3
+	* Feature #12678: Allow empty password for mysql user.
+
+2009-11-26  Andreas Kundoch  <typo3@mehrwert.de>
 	* Version 4.7.2
-	* Fixed a bug: Removed erroneous require statement
+	* Fixed #12772: Removed erroneous require statement
 
 2009-11-25  Andreas Kundoch  <typo3@mehrwert.de>
 	* Version 4.7.1
