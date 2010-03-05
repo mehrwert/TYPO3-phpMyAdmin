@@ -3,7 +3,7 @@
 * Copyright notice
 *
 * (c) 1999-2005 Kasper Skaarhoj (kasperYYYY@typo3.com)
-* (c) 2006-2009 mehrwert (typo3@mehrwert.de)
+* (c) 2006-2010 mehrwert (typo3@mehrwert.de)
 * All rights reserved
 *
 * This script is part of the TYPO3 project. The TYPO3 project is
@@ -22,19 +22,6 @@
 *
 * This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
-/**
- * [CLASS/FUNCTION INDEX of SCRIPT]
- *
- *
- *
- *   49: class SC_mod_tools_phpadmin_index
- *   68:     public function main()
- *  170:     public function printContent()
- *
- * TOTAL FUNCTIONS: 2
- * (This index is automatically created/updated by the extension "extdeveval")
- *
- */
 
 /**
  * Utilities for the phpMyAdmin third party database administration Tool
@@ -70,6 +57,10 @@ class SC_mod_tools_phpadmin_index {
 			// Declare globals
 		global $BE_USER,$LANG,$BACK_PATH,$TCA_DESCR,$TCA,$CLIENT,$TYPO3_CONF_VARS;
 
+			// Set the path to phpMyAdmin
+		$extPath = t3lib_extMgm::extPath('phpmyadmin');
+		$typo3DocumentRoot = t3lib_div::getIndpEnv('TYPO3_DOCUMENT_ROOT');
+		
 			// Set class config for module
 		$this->MCONF = $GLOBALS['MCONF'];
 
@@ -77,7 +68,7 @@ class SC_mod_tools_phpadmin_index {
 		$extensionConfiguration = unserialize($TYPO3_CONF_VARS['EXT']['extConf']['phpmyadmin']);
 
 			// Path to install dir
-		$this->MCONF['PMA_absolute_path'] = t3lib_extMgm::extPath('phpmyadmin').$this->MCONF['PMA_subdir'];
+		$this->MCONF['PMA_absolute_path'] = $extPath.$this->MCONF['PMA_subdir'];
 
 			// Path to web dir
 		$this->MCONF['PMA_relative_path'] = t3lib_extMgm::extRelPath('phpmyadmin').$this->MCONF['PMA_subdir'];
@@ -104,21 +95,21 @@ class SC_mod_tools_phpadmin_index {
 			$_SESSION['PMA_hideOtherDBs'] = $extensionConfiguration['hideOtherDBs'];
 			
 				// Get signon uri for redirect
-			$path_ext = substr(t3lib_extMgm::extPath('phpmyadmin'), strlen($_SERVER['DOCUMENT_ROOT']), strlen(t3lib_extMgm::extPath('phpmyadmin')));
+			$path_ext = substr($extPath, strlen($typo3DocumentRoot), strlen($extPath));
 			$path_ext = (substr($path_ext, 0, 1) != '/'  ? '/'.$path_ext : $path_ext);
 			$path_pma = $path_ext.$this->MCONF['PMA_subdir'];
 			$_SESSION['PMA_SignonURL'] = $path_pma.'index.php';
 
 				// Try to get the TYPO3 backend uri even if it's installed in a subdirectory
 				// Compile logout path and add a slash if the returned string does not start with
-			$path_typo3 = substr(PATH_typo3, strlen($_SERVER['DOCUMENT_ROOT']), strlen(PATH_typo3));
+			$path_typo3 = substr(PATH_typo3, strlen($typo3DocumentRoot), strlen(PATH_typo3));
 			$path_typo3 = (substr($path_typo3, 0, 1) != '/'  ? '/'.$path_typo3 : $path_typo3);
 			$_SESSION['PMA_LogoutURL'] = $path_typo3.'logout.php';
 
 				// Prepend document root if uploadDir does not start with a slash "/"
 			$extensionConfiguration['uploadDir'] = trim($extensionConfiguration['uploadDir']);
 			if (strpos($extensionConfiguration['uploadDir'], '/') !== 0) {
-				$_SESSION['PMA_uploadDir'] = $_SERVER['DOCUMENT_ROOT'].'/'.$extensionConfiguration['uploadDir'];
+				$_SESSION['PMA_uploadDir'] = $typo3DocumentRoot.'/'.$extensionConfiguration['uploadDir'];
 			} else {
 				$_SESSION['PMA_uploadDir'] = $extensionConfiguration['uploadDir'];
 			}

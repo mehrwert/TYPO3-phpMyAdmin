@@ -1,3 +1,9 @@
+2010-03-05  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.8.0
+	* Feature: Updated pMA to the latest stable release (3.2.5)
+	* Fixed #13481: Get signon uri for redirect (basic patches provided by Michael Klapper and Fabrizio Branca, thanks!)
+	* Follow-up/Changed: Using vars $extPath and $typo3DocumentRoot
+
 2009-11-26  Andreas Kundoch  <typo3@mehrwert.de>
 	* Version 4.7.3
 	* Feature #12678: Allow empty password for mysql user.
