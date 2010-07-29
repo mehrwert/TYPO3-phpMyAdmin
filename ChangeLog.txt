@@ -1,3 +1,7 @@
+2010-07-28  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.8.1
+	* Security: Critical security fix for broken backend permission check (TYPO3-SA-2010-014)
+
 2010-03-05  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.8.0
 	* Feature: Updated pMA to the latest stable release (3.2.5)
@@ -99,7 +103,7 @@
 	* Version 3.0.0
 	* Updated pMA to the latest stable release (2.11.6)
 	* Changed the authentication concept for pMA
-		- Using »signon« auth (see http://wiki.cihar.com/pma/auth_types#signon) now 
+		- Using √àsignon√á auth (see http://wiki.cihar.com/pma/auth_types#signon) now 
 		  (Thanks to Marc Bastian Heinrichs for pointing me to this method)
 		- Added a call to the TYPO3 BE logoff hook to delete the pMA session on logout
 	* The admin may choose in the extension configuration (in EM) to show non-TYPO3 databases (if the SQL User has access to) 

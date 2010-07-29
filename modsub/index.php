@@ -30,7 +30,7 @@
  * @subpackage	tx_phpmyadmin
  * @version		$Id$
  * @author		mehrwert <typo3@mehrwert.de>
- * @author		Kasper Skårhøj <kasperYYYY@typo3.com>
+ * @author		Kasper SkÃ¥rhÃ¸j <kasperYYYY@typo3.com>
  * @license		GPL
  */
 class SC_mod_tools_phpadmin_index {
@@ -184,6 +184,10 @@ class SC_mod_tools_phpadmin_index {
 
 // Proceed if BE loaded
 if (in_array('t3lib_div', get_declared_classes())) {
+
+		// Apply access restrictions
+	$BE_USER->modAccess($MCONF, 1);
+
 	// Make instance:
 	$SOBE = t3lib_div::makeInstance('SC_mod_tools_phpadmin_index');
 	$SOBE->main();
