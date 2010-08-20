@@ -27,6 +27,6 @@ if (!defined('TYPO3_cliMode') || !TYPO3_cliMode) {
 }
 
 // The subdirectory where the pMA source is located (used for cookie removal and script inclusion)
-$TYPO3_CONF_VARS['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-3.2.5-all-languages';
+$TYPO3_CONF_VARS['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-3.3.5.1-all-languages';
 
 ?>
