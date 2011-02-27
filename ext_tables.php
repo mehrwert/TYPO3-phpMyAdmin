@@ -13,20 +13,26 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-// If the backend is loaded, add the module
+	// Get config
+$extensionConfiguration = unserialize($TYPO3_CONF_VARS['EXT']['extConf']['phpmyadmin']);
+
+	// Check for IP restriction (devIpMask), and die if not allowed
+$showPhpMyAdminInWebModule = (boolean) $extensionConfiguration['showPhpMyAdminInWebModule'];
+
+	// If the backend is loaded, add the module
 if (TYPO3_MODE == 'BE') {
 	t3lib_extMgm::addModule('tools', 'txphpmyadmin', '', t3lib_extMgm::extPath($_EXTKEY) . 'modsub/');
 }
 
-// Require the utilities class and define logoff method for hook
-@require_once(t3lib_extMgm::extPath('phpmyadmin').'res/class.tx_phpmyadmin_utilities.php');
+	// Require the utilities class and define logoff method for hook
+require_once(t3lib_extMgm::extPath('phpmyadmin').'res/class.tx_phpmyadmin_utilities.php');
 
-// Do not load post processing class if TYPO3 is in CLI mode
+	// Do not load post processing class if TYPO3 is in CLI mode
 if (!defined('TYPO3_cliMode') || !TYPO3_cliMode) {
 	$TYPO3_CONF_VARS['SC_OPTIONS']['t3lib/class.t3lib_userauth.php']['logoff_post_processing'][] = 'tx_phpmyadmin_utilities->pmaLogOff';
 }
 
-// The subdirectory where the pMA source is located (used for cookie removal and script inclusion)
-$TYPO3_CONF_VARS['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-3.3.5.1-all-languages';
+	// The subdirectory where the pMA source is located (used for cookie removal and script inclusion)
+$TYPO3_CONF_VARS['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-3.3.9.2-all-languages';
 
 ?>

@@ -60,12 +60,45 @@ class SC_mod_tools_phpadmin_index {
 			// Set the path to phpMyAdmin
 		$extPath = t3lib_extMgm::extPath('phpmyadmin');
 		$typo3DocumentRoot = t3lib_div::getIndpEnv('TYPO3_DOCUMENT_ROOT');
-		
+
 			// Set class config for module
 		$this->MCONF = $GLOBALS['MCONF'];
 
 			// Get config
 		$extensionConfiguration = unserialize($TYPO3_CONF_VARS['EXT']['extConf']['phpmyadmin']);
+
+			// IP-based Access restrictions
+		$devIPmask = trim($TYPO3_CONF_VARS['SYS']['devIPmask']);
+		$remoteAddress = t3lib_div::getIndpEnv('REMOTE_ADDR');
+
+					// Check for IP restriction (devIpMask), and die if not allowed
+		$useDevIpMask = (boolean) $extensionConfiguration['useDevIpMask'];
+		if ($useDevIpMask === TRUE) {
+				// Abort if devIPmask is wildcarded
+			if ($devIPmask != '*') {
+				$message = '<h1>Access Denied</h1>
+							<p>
+								This phpMyAdmin-Module was configured with IP-based access restrictions and your
+								REMOTE_ADDR ('.$remoteAddress.') is not in TYPO3 devIPmask ('.$devIPmask.').
+							</p>';
+				if (!t3lib_div::inList($devIPmask, $remoteAddress)) {
+					die($message);
+				}
+			}
+		}
+
+			// Check for ip restriction, and die if not allowed
+		$allowedIps = trim($extensionConfiguration['allowedIps']);
+		if (!empty($allowedIps)) {
+			$message = '<h1>Access Denied</h1>
+						<p>
+							This phpMyAdmin-Module was configured with IP-based access restrictions and your
+							REMOTE_ADDR ('.$remoteAddress.') is not in the list of allowed IPs ('.$allowedIps.').
+						</p>';
+			if (!t3lib_div::inList($allowedIps, $remoteAddress)) {
+				die($message);
+			}
+		}
 
 			// Path to install dir
 		$this->MCONF['PMA_absolute_path'] = $extPath.$this->MCONF['PMA_subdir'];
@@ -93,7 +126,7 @@ class SC_mod_tools_phpadmin_index {
 				// Configure some other parameters
 			$_SESSION['PMA_extConf'] = $TYPO3_CONF_VARS['EXT']['extConf']['phpmyadmin'];
 			$_SESSION['PMA_hideOtherDBs'] = $extensionConfiguration['hideOtherDBs'];
-			
+
 				// Get signon uri for redirect
 			$path_ext = substr($extPath, strlen($typo3DocumentRoot), strlen($extPath));
 			$path_ext = (substr($path_ext, 0, 1) != '/'  ? '/'.$path_ext : $path_ext);

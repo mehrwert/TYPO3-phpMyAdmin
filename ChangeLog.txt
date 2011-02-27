@@ -1,3 +1,10 @@
+2011-02-26  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.10.0
+	* Feature: Updated pMA to the latest stable release (3.3.9.2)
+	* Feature: IP-Access restrictions in extension configuration (Thanks to Søren Malling!)
+	* Feature: TYPO3 4.5 compatibility
+	* Change: Disabled the TYPO3 theme until next update
+
 2010-08-20  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.9.0
 	* Security: Security fix (PMASA-2010-5 and TYPO3-SA-2010-017): Several XSS vulnerabilities were found in the code.
@@ -49,7 +56,7 @@
 
 2009-03-24  Andreas Kundoch  <typo3@mehrwert.de>
 	* Version 4.3.0
-	* Security: Security fix (PMASA-2009-3): Insufficient output sanitizing when generating configuration file. 
+	* Security: Security fix (PMASA-2009-3): Insufficient output sanitizing when generating configuration file.
 	* Feature: Updated pMA to the latest stable release (3.1.3.1)
 
 2008-12-14  Andreas Kundoch  <typo3@mehrwert.de>
@@ -80,22 +87,22 @@
 2008-09-28  Andreas Kundoch  <typo3@mehrwert.de>
 	* Version 4.0.0
 	* Updated pMA to the latest stable release (3.0.0)
-	* Branching the pMA extension into two branches: The 3.x series with PHP4 support and the 4.x series with a minimum requirement of PHP5 (5.2 and above). This version supports various features of MySQL 5.1, the Maria and PBXT storage engines. The 3.0 series of PhpMyAdmin requires PHP 5.2+ and MySQL 5.0.15+. 
+	* Branching the pMA extension into two branches: The 3.x series with PHP4 support and the 4.x series with a minimum requirement of PHP5 (5.2 and above). This version supports various features of MySQL 5.1, the Maria and PBXT storage engines. The 3.0 series of PhpMyAdmin requires PHP 5.2+ and MySQL 5.0.15+.
 	* Old (3.x) versions may be obtained at https://www.mehrwert.de/go/t3x
 
 2008-09-22  Andreas Kundoch  <typo3@mehrwert.de>
 	* Version 3.4.0
-	* Security fix (PMASA-2008-8): XSS in MSIE using NUL byte 
+	* Security fix (PMASA-2008-8): XSS in MSIE using NUL byte
 	* Updated pMA to the latest stable release (2.11.9.2)
 
 2008-09-15  Andreas Kundoch  <typo3@mehrwert.de>
-	* Version 3.3.0 (skipping 3.2.0 see below) 
-	* Security fix (PMASA-2008-7): Code execution vulnerability 
+	* Version 3.3.0 (skipping 3.2.0 see below)
+	* Security fix (PMASA-2008-7): Code execution vulnerability
 	* Updated pMA to the latest stable release (2.11.9.1)
 
 2008-06-25  Andreas Kundoch  <typo3@mehrwert.de>
 	* Version 3.1.0 (was release as 3.2.0 by the TYPO3 Security Team by accident)
-	* Security fix (PMASA-2008-4): XSS on plausible insecure PHP installation 
+	* Security fix (PMASA-2008-4): XSS on plausible insecure PHP installation
 	* Updated pMA to the latest stable release (2.11.7)
 	* Changed handling of required/included files
 	* Removed XCLASS call in modsub/index.php
@@ -108,10 +115,10 @@
 	* Version 3.0.0
 	* Updated pMA to the latest stable release (2.11.6)
 	* Changed the authentication concept for pMA
-		- Using ÈsignonÇ auth (see http://wiki.cihar.com/pma/auth_types#signon) now 
+		- Using ÈsignonÇ auth (see http://wiki.cihar.com/pma/auth_types#signon) now
 		  (Thanks to Marc Bastian Heinrichs for pointing me to this method)
 		- Added a call to the TYPO3 BE logoff hook to delete the pMA session on logout
-	* The admin may choose in the extension configuration (in EM) to show non-TYPO3 databases (if the SQL User has access to) 
+	* The admin may choose in the extension configuration (in EM) to show non-TYPO3 databases (if the SQL User has access to)
 	* The admin may define a path for dumped files and uploads
 	* Updated the version number
 
