@@ -1,3 +1,7 @@
+2011-03-07  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.10.2
+	* Fixed #17850: Using t3lib_div::cmpIP for access control
+
 2011-02-26  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.10.0
 	* Feature: Updated pMA to the latest stable release (3.3.9.2)
