@@ -1,5 +1,9 @@
 2011-03-07  Andreas Beutel  <typo3@mehrwert.de>
-	* Version 4.10.2
+	* Version 4.10.3
+	* Implemented #15492: 'doNotLoadInFE' => 1 in EM_CONF
+
+2011-03-07  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.10.3
 	* Fixed #17850: Using t3lib_div::cmpIP for access control
 
 2011-02-26  Andreas Beutel  <typo3@mehrwert.de>
