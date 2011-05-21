@@ -3,7 +3,7 @@
 ########################################################################
 # Extension Manager/Repository config file for ext: "phpmyadmin"
 #
-# Auto generated 01-11-2008 20:23
+# Auto generated 15-10-2009 21:53
 #
 # Manual updates:
 # Only the data in the array - anything else is removed by next write.
@@ -11,11 +11,11 @@
 ########################################################################
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'phpMyAdmin',
-	'description' => 'Third party \'phpMyAdmin\' administration module. TYPO3 preconfigures phpMyAdmin to the current database and restricts access to admin-users only.',
+	'title' => 'phpMyAdmin (legacy release)',
+	'description' => 'Legacy release for PHP 4 and MySQL 4 of third party \'phpMyAdmin\' administration module. TYPO3 preconfigures phpMyAdmin to the current database and restricts access to admin-users only.',
 	'category' => 'module',
 	'shy' => 0,
-	'version' => '3.6.0',
+	'version' => '3.7.0',
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',
@@ -27,7 +27,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'modify_tables' => '',
 	'clearcacheonload' => 0,
 	'lockType' => '',
-	'author' => 'Andreas Beutel',
+	'author' => 'Andreas Beutel / mehrwert',
 	'author_email' => 'typo3@mehrwert.de',
 	'author_company' => 'mehrwert intermediale kommunikation GmbH',
 	'CGLcompliance' => '',

@@ -11,7 +11,7 @@
   * Translators
   * Glossary
 
-phpMyAdmin 2.11.10.1 Documentation
+phpMyAdmin 2.11.11.3 Documentation
 
   * phpMyAdmin homepage
   * SourceForge phpMyAdmin project page
