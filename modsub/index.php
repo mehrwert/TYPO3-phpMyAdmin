@@ -95,7 +95,7 @@ class SC_mod_tools_phpadmin_index {
 							This phpMyAdmin-Module was configured with IP-based access restrictions and your
 							REMOTE_ADDR ('.$remoteAddress.') is not in the list of allowed IPs ('.$allowedIps.').
 						</p>';
-			if (!t3lib_div::cmpIP($remoteAddress, $devIPmask)) {
+			if (!t3lib_div::cmpIP($remoteAddress, $allowedIps)) {
 				die($message);
 			}
 		}
