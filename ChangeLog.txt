@@ -1,3 +1,11 @@
+2011-07-03  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.11.2
+	* Feature: Updated pMA to the latest stable release (3.4.3.1)
+	* Security: Security fixes
+		* PMASA-2011-5: Fixed possible session manipulation in swekey authentication
+		* PMASA-2011-6: Fixed possible code injection incase session variables are compromised
+		* PMASA-2011-7: Fixed regexp quoting issue in Synchronize code
+
 2011-05-23  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.11.1
 	* Fixed #18148: Configuration: Allowed IPs doesn't work
