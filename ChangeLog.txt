@@ -1,3 +1,12 @@
+2011-07-23  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.11.3
+	* Feature: Updated pMA to the latest stable release (3.4.3.2)
+	* Security: Security fixes
+		* PMASA-2011-9: XSS in table Print view
+		* PMASA-2011-10: Local file inclusion
+		* PMASA-2011-11: Local file inclusion vulnerability and code execution
+		* PMASA-2011-12: Possible session manipulation in swekey authentication
+
 2011-07-03  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.11.2
 	* Feature: Updated pMA to the latest stable release (3.4.3.1)
