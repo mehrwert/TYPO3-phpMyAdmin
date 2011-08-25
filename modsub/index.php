@@ -3,7 +3,7 @@
 * Copyright notice
 *
 * (c) 1999-2005 Kasper Skaarhoj (kasperYYYY@typo3.com)
-* (c) 2006-2010 mehrwert (typo3@mehrwert.de)
+* (c) 2006-2011 mehrwert (typo3@mehrwert.de)
 * All rights reserved
 *
 * This script is part of the TYPO3 project. The TYPO3 project is

@@ -1,3 +1,9 @@
+2011-08-24  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.11.4
+	* Feature: Updated pMA to the latest stable release (3.4.4)
+	* Security: Security fixes
+		* PMASA-2011-13: Multiple XSS in the Tracking feature.
+
 2011-07-23  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.11.3
 	* Feature: Updated pMA to the latest stable release (3.4.3.2)
