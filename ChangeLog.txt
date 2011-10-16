@@ -1,14 +1,21 @@
+2011-10-16  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.11.6
+	* Feature: Updated pMA to the latest stable release (3.4.6)
+	* Security: Security fixes
+		* PMASA-2011-15: Local path disclosure vulnerability.
+		* PMASA-2011-16: XSS in setup (host/verbose parameter)
+
 2011-09-14  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.11.5
 	* Feature: Updated pMA to the latest stable release (3.4.5)
 	* Security: Security fixes
-		* PMASA-2011-14: Multiple XSS.
+		* PMASA-2011-14: Multiple XSS
 
 2011-08-24  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.11.4
 	* Feature: Updated pMA to the latest stable release (3.4.4)
 	* Security: Security fixes
-		* PMASA-2011-13: Multiple XSS in the Tracking feature.
+		* PMASA-2011-13: Multiple XSS in the Tracking feature
 
 2011-07-23  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.11.3
