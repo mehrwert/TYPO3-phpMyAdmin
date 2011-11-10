@@ -13,7 +13,7 @@
 $MCONF['name'] = 'tools_txphpmyadmin';
 $MCONF['script'] = '_DISPATCH';
 $MCONF['access'] = 'admin';
-$MCONF['PMA_subdir'] = 'res/phpMyAdmin-3.4.7-all-languages/';
+$MCONF['PMA_subdir'] = 'res/phpMyAdmin-3.4.7.1-all-languages/';
 $MCONF['PMA_script'] = 'index.php';
 $MLANG['default']['tabs_images']['tab'] = 'thirdparty_db.gif';
 $MLANG['default']['ll_ref'] = 'LLL:EXT:phpmyadmin/modsub/locallang_mod.php';
