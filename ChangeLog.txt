@@ -1,3 +1,9 @@
+2011-12-22  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.11.10
+	* Feature: Updated pMA to the latest stable release (3.4.9)
+	* Security: Non-critical security fixes
+		* PMASA-2011-20: XSS in export.
+
 2011-11-10  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.11.9
 	* Feature: Updated pMA to the latest stable release (3.4.7.1)
