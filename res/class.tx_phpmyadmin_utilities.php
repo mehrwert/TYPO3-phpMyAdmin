@@ -70,8 +70,9 @@ class tx_phpmyadmin_utilities {
 		setcookie('phpMyAdmin', '', time() - 3600, '/');
 		setcookie('phpMyAdmin', '', time() - 3600, $cookiePath);
 
-			// Create signon session
-		$session_name = 'tx_phpmyadmin';
+			// Create signon session. Now set to phpMyAdmin
+			// according to http://bugs.typo3.org/view.php?id=18245#61750
+		$session_name = 'phpMyAdmin';
 		session_name($session_name);
 		session_start();
 
