@@ -71,7 +71,12 @@ class tx_phpmyadmin_utilities {
 		setcookie('phpMyAdmin', '', time() - 3600, $cookiePath);
 
 			// Create signon session. Now set to phpMyAdmin
-			// according to http://bugs.typo3.org/view.php?id=18245#61750
+			// according to @see http://bugs.typo3.org/view.php?id=18245#61750
+			// Save old session @see http://bugs.typo3.org/view.php?id=18560
+		$oldSessionName = session_name();
+		$oldSessionId = session_id();
+		session_write_close();
+
 		$session_name = 'phpMyAdmin';
 		session_name($session_name);
 		session_start();
@@ -84,8 +89,14 @@ class tx_phpmyadmin_utilities {
 		$_SESSION['PMA_SignonURL'] = $path_typo3.'index.php';
 		$_SESSION['PMA_LogoutURL'] = $path_typo3.'logout.php';
 
-		// Close that session
+			// Close that session
 		session_write_close();
+
+		session_name($oldSessionName);
+		if (!empty($oldSessionId)) {
+			session_id($oldSessionId);
+		}
+		session_start();
 
 	}
 

@@ -1,3 +1,11 @@
+2012-08-13  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.14.0
+	* Feature: Updated pMA to the latest stable release (3.5.2.2)
+	* Fix: #18560: Every first BE-Login fails (thanks to Markus Kappe for a patch and the others for testing)
+	* Security: Includes non-critical security fixes
+		* PMASA-2012-3: Path disclosure due to missing library.
+		* PMASA-2012-4: Fixed XSS vulnerabilities.
+
 2012-03-31  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.13.0
 	* Feature: Updated pMA to the latest stable release (3.4.10.2)
