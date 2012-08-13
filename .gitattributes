@@ -3,7 +3,6 @@
 doc/manual.sxw -text
 /ext_icon.gif -text
 modsub/clear.gif -text
-modsub/locallang_mod.xml eol=lf
 modsub/thirdparty_db.gif -text
 res/phpMyAdmin-3.5.2.2-all-languages/ChangeLog -text
 res/phpMyAdmin-3.5.2.2-all-languages/Documentation.html eol=lf
