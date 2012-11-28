@@ -29,10 +29,10 @@ require_once(t3lib_extMgm::extPath('phpmyadmin').'res/class.tx_phpmyadmin_utilit
 
 	// Do not load post processing class if TYPO3 is in CLI mode
 if (!defined('TYPO3_cliMode') || !TYPO3_cliMode) {
-	$TYPO3_CONF_VARS['SC_OPTIONS']['t3lib/class.t3lib_userauth.php']['logoff_post_processing'][] = 'tx_phpmyadmin_utilities->pmaLogOff';
+	$TYPO3_CONF_VARS['SC_OPTIONS']['t3lib/class.t3lib_userauth.php']['logoff_post_processing'][] = 'tx_phpmyadmin_utilities->user_pmaLogOff';
 }
 
 	// The subdirectory where the pMA source is located (used for cookie removal and script inclusion)
-$TYPO3_CONF_VARS['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-3.5.2.2-all-languages';
+$TYPO3_CONF_VARS['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-3.5.4-all-languages';
 
 ?>

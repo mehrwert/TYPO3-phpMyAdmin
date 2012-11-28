@@ -1,3 +1,9 @@
+2012-11-28  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.15.0
+	* Set TYPO3 6.0 compatibility
+	* Feature: Updated pMA to the latest stable release (3.5.4)
+	* Fix: #42517: Typo3 6.0 - 'backend required' error
+
 2012-08-13  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.14.0
 	* Feature: Updated pMA to the latest stable release (3.5.2.2)

@@ -39,13 +39,13 @@ class SC_mod_tools_phpadmin_index {
 	 * Configuration for the module
 	 * @var	Array
 	 */
-	var $MCONF = array();
+	public $MCONF = array();
 
 	/**
 	 * The backend document
 	 * @var	Object
 	 */
-	var $doc;
+	public $doc;
 
 	/**
 	 * The main method of the Plugin
@@ -117,7 +117,7 @@ class SC_mod_tools_phpadmin_index {
 			session_name($session_name);
 			session_start();
 
-				// Store there credentials in the session
+				// Store the credentials in the session
 			$_SESSION['PMA_single_signon_user'] = TYPO3_db_username;
 			$_SESSION['PMA_single_signon_password'] = TYPO3_db_password;
 			$_SESSION['PMA_single_signon_host'] = TYPO3_db_host;
@@ -215,18 +215,25 @@ class SC_mod_tools_phpadmin_index {
 	}
 }
 
-// Proceed if BE loaded
-if (in_array('t3lib_div', get_declared_classes())) {
-
-		// Apply access restrictions
-	$BE_USER->modAccess($MCONF, 1);
-
-	// Make instance:
-	$SOBE = t3lib_div::makeInstance('SC_mod_tools_phpadmin_index');
-	$SOBE->main();
-	$SOBE->printContent();
+	// Proceed if TYPO3_MODE is defined
+if ( !defined('TYPO3_MODE') ) {
+	die ('<h1>Error</h1><p>Unable to determine TYPO3_MODE.</p>');
 } else {
-	echo '<h1>Error</h1><p>The TYPO3 Backend is required for phpMyAdmin module but was not loaded.</p>';
+	
+		// Proceed if BE loaded
+	if ( TYPO3_MODE == 'BE' ) {
+		
+			// Apply access restrictions
+		$BE_USER->modAccess($MCONF, 1);
+
+			// Make instance:
+		$SOBE = t3lib_div::makeInstance('SC_mod_tools_phpadmin_index');
+		$SOBE->main();
+		$SOBE->printContent();
+		
+	} else {
+		die ('<h1>Error</h1><p>The TYPO3 Backend is required for phpMyAdmin module but was not loaded.</p>');
+	}
 }
 
 ?>
