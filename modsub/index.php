@@ -103,6 +103,9 @@ class SC_mod_tools_phpadmin_index {
 			// Path to install dir
 		$this->MCONF['PMA_absolute_path'] = $extPath.$this->MCONF['PMA_subdir'];
 
+			// PMA uses relative file inclusion, so we need to ensure a proper include_path
+		@set_include_path($this->MCONF['PMA_absolute_path'] . PATH_SEPARATOR . get_include_path());
+
 			// Path to web dir
 		$this->MCONF['PMA_relative_path'] = t3lib_extMgm::extRelPath('phpmyadmin').$this->MCONF['PMA_subdir'];
 
