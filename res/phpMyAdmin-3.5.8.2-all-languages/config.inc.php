@@ -31,6 +31,7 @@ if (isset($_COOKIE[$session_name])) {
 	$extensionConfiguration['PMA_uploadDir'] = $_SESSION['PMA_uploadDir'];
 	$extensionConfiguration['PMA_SignonURL'] = ($_SESSION['PMA_SignonURL'] != '' ? $_SESSION['PMA_SignonURL'] : '../../modsub/index.php');
     $extensionConfiguration['PMA_LogoutURL'] = ($_SESSION['PMA_LogoutURL'] != '' ? $_SESSION['PMA_LogoutURL'] : '/typo3/logout.php');
+	$extensionConfiguration['AjaxEnable'] = ( isset($_SESSION['AjaxEnable']) ? (boolean) $_SESSION['AjaxEnable'] : TRUE);
 
 		// End config session/
 	session_write_close();
@@ -134,5 +135,6 @@ $cfg['EditInWindow'] = true;
 $cfg['QueryWindowHeight'] = 510;
 $cfg['QueryWindowWidth'] = 640;
 $cfg['QueryWindowDefTab'] = 'sql';
+$cfg['AjaxEnable'] = $extensionConfiguration['AjaxEnable'];
 
 ?>

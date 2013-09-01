@@ -1,3 +1,7 @@
+2013-09-01  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.17.0
+	* Feature: #51384: Add EM-config option to disable Ajax in pMA (thanks to Gabriel Kaufmann for the suggestion)
+
 2013-07-29  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.16.0
 	* Feature: Updated pMA to the latest stable release (3.5.8.2)

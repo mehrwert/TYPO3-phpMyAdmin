@@ -151,6 +151,14 @@ class SC_mod_tools_phpadmin_index {
 			}
 			$_SESSION['PMA_typo_db'] = TYPO3_db;
 
+				// Check if Ajax is enabled by config - @see http://forge.typo3.org/issues/51384
+			$ajaxEnable = (boolean) $extensionConfiguration['ajaxEnable'];
+			if ($ajaxEnable === TRUE) {
+				$_SESSION['AjaxEnable'] = TRUE;
+			} else {
+				$_SESSION['AjaxEnable'] = FALSE;
+			}
+
 			$id = session_id();
 
 				// Force to set the cookie according to issue #8884
