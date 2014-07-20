@@ -1,3 +1,11 @@
+2014-07-20  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.18.2
+	* Feature: Updated pMA to the latest stable 4.0.x release (4.0.10.1)
+	* Security: Includes non-critical security fixes
+		* PMASA-2014-5: Self-XSS due to unescaped HTML output in database triggers page.
+		* PMASA-2014-6: Multiple XSS in AJAX confirmation messages.
+	* Feature: #56522: Do not remove PL language on packaging for T3O
+
 2014-03-03  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.18.1
 	* Set TYPO3 6.2 compatibility
