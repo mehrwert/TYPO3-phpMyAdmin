@@ -1,3 +1,10 @@
+2014-09-25  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.18.3
+	* Feature: Updated pMA to the latest stable 4.0.x release (4.0.10.3)
+	* Security: Includes several security fixes
+		* PMASA-2014-10: XSRF/CSRF due to DOM based XSS in the micro history feature
+		* PMASA-2014-8: Multiple XSS vulnerabilities in browse table, ENUM editor, monitor, query charts and table relations pages
+
 2014-07-20  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.18.2
 	* Feature: Updated pMA to the latest stable 4.0.x release (4.0.10.1)

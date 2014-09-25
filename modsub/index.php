@@ -28,7 +28,7 @@
  *
  * @package		TYPO3
  * @subpackage	tx_phpmyadmin
- * @version		$Id$
+ * @version		$Id: index.php 79361 2013-09-01 08:36:12Z mehrwert $
  * @author		mehrwert <typo3@mehrwert.de>
  * @author		Kasper Skårhøj <kasperYYYY@typo3.com>
  * @license		GPL

@@ -39,7 +39,7 @@
  *
  * @package		TYPO3
  * @subpackage	tx_phpmyadmin
- * @version		$Id$
+ * @version		$Id: class.tx_phpmyadmin_utilities.php 68078 2012-11-28 23:22:22Z mehrwert $
  * @author		mehrwert <typo3@mehrwert.de>
  * @license		GPL
  */
