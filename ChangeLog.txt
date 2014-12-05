@@ -1,3 +1,11 @@
+2014-12-05  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.18.5
+	* Feature: Updated pMA to the latest stable 4.0.x release (4.0.10.7)
+	* Security: Includes several security fixes
+		* PMASA-2014-13: Multiple XSS vulnerabilities.
+		* PMASA-2014-14: Local file inclusion vulnerability.
+		* PMASA-2014-17: DoS vulnerability with long passwords.
+
 2014-11-01  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.18.4
 	* Feature: Updated pMA to the latest stable 4.0.x release (4.0.10.5)
