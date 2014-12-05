@@ -6,7 +6,7 @@
  * @package		TYPO3
  * @subpackage	tx_phpmyadmin
  * @license		GPL
- * @version		$Id: ext_tables.php 86420 2014-09-25 06:54:40Z mehrwert $
+ * @version		$Id: ext_tables.php 86837 2014-11-04 17:18:51Z mehrwert $
  */
 
 if (!defined ('TYPO3_MODE')) {
@@ -33,6 +33,6 @@ if (!defined('TYPO3_cliMode') || !TYPO3_cliMode) {
 }
 
 	// The subdirectory where the pMA source is located (used for cookie removal and script inclusion)
-$TYPO3_CONF_VARS['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-4.0.10.3-all-languages';
+$TYPO3_CONF_VARS['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-4.0.10.5-all-languages';
 
 ?>

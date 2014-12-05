@@ -1,3 +1,10 @@
+2014-11-01  Andreas Beutel  <typo3@mehrwert.de>
+	* Version 4.18.4
+	* Feature: Updated pMA to the latest stable 4.0.x release (4.0.10.5)
+	* Security: Includes several security fixes
+		* PMASA-2014-11: XSS vulnerabilities in table search and table structure pages.
+		* PMASA-2014-12: XSS vulnerabilities in SQL debug output and server monitor page.
+
 2014-09-25  Andreas Beutel  <typo3@mehrwert.de>
 	* Version 4.18.3
 	* Feature: Updated pMA to the latest stable 4.0.x release (4.0.10.3)
