@@ -9,6 +9,3 @@ allowedIps =
 
   # cat=basic; type=boolean; label=Use devIpMask: Use devIpMask from Install Tool (notice: overrules above setting)
 useDevIpMask = 0
-
-  # cat=basic; type=boolean; label=Enable Ajax: Enable Ajax in phpMyAdmin
-ajaxEnable = 1

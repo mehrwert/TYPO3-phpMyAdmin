@@ -3,7 +3,7 @@
 * Copyright notice
 *
 * (c) 1999-2005 Kasper Skaarhoj (kasperYYYY@typo3.com)
-* (c) 2006-2011 mehrwert (typo3@mehrwert.de)
+* (c) 2006-2015 mehrwert (typo3@mehrwert.de)
 * All rights reserved
 *
 * This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,7 +28,6 @@
  *
  * @package		TYPO3
  * @subpackage	tx_phpmyadmin
- * @version		$Id: index.php 79361 2013-09-01 08:36:12Z mehrwert $
  * @author		mehrwert <typo3@mehrwert.de>
  * @author		Kasper Skårhøj <kasperYYYY@typo3.com>
  * @license		GPL
@@ -150,14 +149,6 @@ class SC_mod_tools_phpadmin_index {
 				$_SESSION['PMA_uploadDir'] = $extensionConfiguration['uploadDir'];
 			}
 			$_SESSION['PMA_typo_db'] = TYPO3_db;
-
-				// Check if Ajax is enabled by config - @see http://forge.typo3.org/issues/51384
-			$ajaxEnable = (boolean) $extensionConfiguration['ajaxEnable'];
-			if ($ajaxEnable === TRUE) {
-				$_SESSION['AjaxEnable'] = TRUE;
-			} else {
-				$_SESSION['AjaxEnable'] = FALSE;
-			}
 
 			$id = session_id();
 
