@@ -2,7 +2,7 @@
 /***************************************************************
 * Copyright notice
 *
-* (c) 2008-2011 mehrwert (typo3@mehrwert.de)
+* (c) 2008-2015 mehrwert (typo3@mehrwert.de)
 * All rights reserved
 *
 * This script is part of the TYPO3 project. The TYPO3 project is
@@ -21,25 +21,12 @@
 *
 * This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
-/**
- * [CLASS/FUNCTION INDEX of SCRIPT]
- *
- *
- *
- *   46: class tx_phpmyadmin_utilities
- *   56:     function pmaLogOff($params = array(), $ref = null)
- *
- * TOTAL FUNCTIONS: 1
- * (This index is automatically created/updated by the extension "extdeveval")
- *
- */
 
 /**
  * Utilities for the phpMyAdmin third party database Administration Tool
  *
  * @package		TYPO3
  * @subpackage	tx_phpmyadmin
- * @version		$Id: class.tx_phpmyadmin_utilities.php 68078 2012-11-28 23:22:22Z mehrwert $
  * @author		mehrwert <typo3@mehrwert.de>
  * @license		GPL
  */

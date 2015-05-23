@@ -8,9 +8,9 @@ execute any SQL statement - see http://www.phpmyadmin.net/
 
 ## Requirements and known issues
 * The included phpMyAdmin 4.0.x is an older version and compatible with PHP 5.2 and MySQL 5. 
-  It is supported for security fixes only (until Jan 1, 2015). Compatibility of TYPO3 extension
+  It is supported for security fixes only (until Jan 1, 2016). Compatibility of TYPO3 extension
   is set to TYPO3 4.5-LTS to 6.2-LTS - but it may NOT WORK due to an »incompatible« PHP version.
   
 ## Roadmap
-With the end of support for phpMyAdmin 4.0 it will be replaced by 4.2 and the TYPO3 version constraint 
-will be at least 6.2-LTS. This change is expected to happen until the end of 2014. 
+With the end of support for phpMyAdmin 4.0 it will be replaced by 4.4 and the TYPO3 version constraint 
+will be at least 6.2-LTS. This change is expected to happen until the end of 2015. 
