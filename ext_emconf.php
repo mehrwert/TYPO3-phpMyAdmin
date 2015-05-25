@@ -12,16 +12,16 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'phpMyAdmin',
-	'description' => 'Third party \'phpMyAdmin\' administration module. Access to admin-users only. 4.x releases require PHP 5.2, TYPO3 4.2 and MySQL 5. The 3.x branch is still supported: http://www.mehrwert.de/go/t3x',
+	'description' => 'Third party \'phpMyAdmin\' administration module. Access to admin-users only.',
 	'category' => 'module',
 	'shy' => 0,
-	'version' => '4.19.0',
+	'version' => '5.0.0-dev',
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',
 	'loadOrder' => '',
 	'module' => 'modsub',
-	'state' => 'stable',
+	'state' => 'beta',
 	'uploadfolder' => 1,
 	'createDirs' => 'uploads/tx_phpmyadmin',
 	'modify_tables' => '',
@@ -35,8 +35,8 @@ $EM_CONF[$_EXTKEY] = array(
 	'CGLcompliance_note' => '',
 	'constraints' => array(
 		'depends' => array(
-			'php' => '5.2.0-0.0.0',
-			'typo3' => '4.2.0-6.2.99',
+			'php' => '5.5.0-0.0.0',
+			'typo3' => '6.2.0-7.2.99',
 		),
 		'conflicts' => array(
 		),

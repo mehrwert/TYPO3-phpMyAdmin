@@ -10,6 +10,12 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2015-05-24 Andreas Beutel - Version 5.0.0-dev
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Development release
+- Feature: Updated pMA to the latest stable 4.4.x release (4.4.7)
+- Set TYPO3 6.2 to 7.2 compatibility
+
 2015-05-23 Andreas Beutel - Version 4.19.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Feature: Updated pMA to the latest stable 4.0.x release (4.0.10.10)
