@@ -42,48 +42,52 @@ class tx_phpmyadmin_utilities {
 	 */
 	public function user_pmaLogOff($params = array(), $ref = null) {
 
+		if ( isset($GLOBALS['PHP_UNIT_TEST_RUNNING']) === FALSE ) {
+
 			// Define the cookie path
-		$cookiePath = substr(t3lib_extMgm::extPath('phpmyadmin'), strlen($_SERVER['DOCUMENT_ROOT'])).'res/'.$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['phpmyadmin']['pmaDirname'].'/';
+			$cookiePath = substr(t3lib_extMgm::extPath('phpmyadmin'), strlen($_SERVER['DOCUMENT_ROOT'])) . 'res/' . $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['phpmyadmin']['pmaDirname'] . '/';
 
 			// Just ensure that the path is starting with a slash
-		if (strpos($cookiePath, '/') !== 0) {
-			$cookiePath = '/'.$cookiePath;
-		}
+			if (strpos($cookiePath, '/') !== 0) {
+				$cookiePath = '/' . $cookiePath;
+			}
 
-		setcookie('tx_phpmyadmin', '', time() - 3600);
-		setcookie('tx_phpmyadmin', '', time() - 3600, '/');
-		setcookie('tx_phpmyadmin', '', time() - 3600, $cookiePath);
-		setcookie('phpMyAdmin', '', time() - 3600);
-		setcookie('phpMyAdmin', '', time() - 3600, '/');
-		setcookie('phpMyAdmin', '', time() - 3600, $cookiePath);
+			setcookie('tx_phpmyadmin', '', time() - 3600);
+			setcookie('tx_phpmyadmin', '', time() - 3600, '/');
+			setcookie('tx_phpmyadmin', '', time() - 3600, $cookiePath);
+			setcookie('phpMyAdmin', '', time() - 3600);
+			setcookie('phpMyAdmin', '', time() - 3600, '/');
+			setcookie('phpMyAdmin', '', time() - 3600, $cookiePath);
 
 			// Create signon session. Now set to phpMyAdmin
 			// according to @see http://bugs.typo3.org/view.php?id=18245#61750
 			// Save old session @see http://bugs.typo3.org/view.php?id=18560
-		$oldSessionName = session_name();
-		$oldSessionId = session_id();
-		session_write_close();
+			$oldSessionName = session_name();
+			$oldSessionId = session_id();
+			session_write_close();
 
-		$session_name = 'phpMyAdmin';
-		session_name($session_name);
-		session_start();
+			$session_name = 'phpMyAdmin';
+			session_name($session_name);
+			session_start();
 
 			// Try to get the TYPO3 backend uri even if it's installed in a subdirectory
-		$path_typo3 = substr(PATH_typo3, strlen($_SERVER['DOCUMENT_ROOT']), strlen(PATH_typo3));
-		$path_typo3 = (substr($path_typo3, 0, 1) != '/'  ? '/'.$path_typo3 : $path_typo3);
+			$path_typo3 = substr(PATH_typo3, strlen($_SERVER['DOCUMENT_ROOT']), strlen(PATH_typo3));
+			$path_typo3 = (substr($path_typo3, 0, 1) != '/' ? '/' . $path_typo3 : $path_typo3);
 
-		$_SESSION['PMA_LogoutURL'] = $path_typo3.'logout.php';
-		$_SESSION['PMA_SignonURL'] = $path_typo3.'index.php';
-		$_SESSION['PMA_LogoutURL'] = $path_typo3.'logout.php';
+			$_SESSION['PMA_LogoutURL'] = $path_typo3 . 'logout.php';
+			$_SESSION['PMA_SignonURL'] = $path_typo3 . 'index.php';
+			$_SESSION['PMA_LogoutURL'] = $path_typo3 . 'logout.php';
 
 			// Close that session
-		session_write_close();
+			session_write_close();
 
-		session_name($oldSessionName);
-		if (!empty($oldSessionId)) {
-			session_id($oldSessionId);
+			session_name($oldSessionName);
+			if (!empty($oldSessionId)) {
+				session_id($oldSessionId);
+			}
+			session_start();
+
 		}
-		session_start();
 
 	}
 
