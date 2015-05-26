@@ -10,7 +10,11 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
-2015-05-24 Andreas Beutel - Version 5.0.0-dev
+2015-05-26 Andreas Beutel - Version 5.0.0-dev
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Feature: Add check for ``$GLOBALS['PHP_UNIT_TEST_RUNNING']`` in class ``tx_phpmyadmin_utilities`` to disable session and cookie handling if PHP Unit Tests are in progress using createFakeFrontEnd(). Set ``$GLOBALS['PHP_UNIT_TEST_RUNNING'] = TRUE;`` in your Unit Test in the ``setUp()`` method of the unit test.
+
+2015-05-25 Andreas Beutel - Version 5.0.0-dev
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Development release
 - Feature: Updated pMA to the latest stable 4.4.x release (4.4.7)
@@ -24,7 +28,6 @@ The following is an overview of the changes in this extension. For more details 
 - `PMASA-2015-2 <http://www.phpmyadmin.net/home_page/security/PMASA-2015-1.php>`_: XSRF/CSRF vulnerability in phpMyAdmin setup.
 - `PMASA-2015-1 <http://www.phpmyadmin.net/home_page/security/PMASA-2015-1.php>`_: Risk of BREACH attack due to reflected parameter.
 - Bugfix: Add extension configuration to disable transparent session ids to fix bugs in JSON output – see https://forge.typo3.org/issues/58263 - thanks to Stefan Froemken for providing this fix
-- Feature: Add check for ``$GLOBALS['PHP_UNIT_TEST_RUNNING']`` in class ``tx_phpmyadmin_utilities`` to disable session and cookie handling if PHP Unit Test are in progress. Set ``$GLOBALS['PHP_UNIT_TEST_RUNNING'] = TRUE;`` in your Unit Test in your ``setUp()`` method.
 - Change: Remove obsolete configuration option »AjaxEnable« (no longer available in pMA)
 - Change: Switch documentation to reST
 
