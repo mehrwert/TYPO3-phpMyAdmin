@@ -23,6 +23,8 @@
 * This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 namespace mehrwert\Phpmyadmin;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 /**
  * Utilities for the phpMyAdmin third party database administration Tool
@@ -43,59 +45,59 @@ class PmaBeModule {
 
 	/**
 	 * The backend document
-	 * @var	Object
+	 * @var	\TYPO3\CMS\Backend\Template\DocumentTemplate
 	 */
 	public $doc;
 
 	/**
-	 * The main method of the Plugin
+	 * Content of module if misconfigured
+	 * @var string
+	 */
+	public $content = '';
+
+	/**
+	 * The main method of the backend module
 	 *
-	 * @return	Mixed		Either returns an error or sends a redirect header
+	 * @return	void
 	 */
 	public function main() {
 
-			// Declare globals
-		global $BE_USER,$LANG,$BACK_PATH,$TCA_DESCR,$TCA,$CLIENT;
+		// Include the LL file for phpMyAdmin
+		$GLOBALS['LANG']->includeLLFile('EXT:phpmyadmin/Resources/Private/Language/locallang.xlf');
 
-			// Set the path to phpMyAdmin
-		$extPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('phpmyadmin');
-		$typo3DocumentRoot = \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_DOCUMENT_ROOT');
+		// Set the path to phpMyAdmin
+		$extPath = ExtensionManagementUtility::extPath('phpmyadmin');
+		$typo3DocumentRoot = GeneralUtility::getIndpEnv('TYPO3_DOCUMENT_ROOT');
 
-			// Set class config for module
+		// Set class config for module
 		$this->MCONF = $GLOBALS['MCONF'];
 
-			// Get config
+		// Get config
 		$extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin']);
 
-			// IP-based Access restrictions
+		// IP-based Access restrictions
 		$devIPmask = trim($GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask']);
-		$remoteAddress = \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('REMOTE_ADDR');
+		$remoteAddress = GeneralUtility::getIndpEnv('REMOTE_ADDR');
 
-					// Check for IP restriction (devIpMask), and die if not allowed
+		// Check for IP restriction (devIpMask), and die if not allowed
 		$useDevIpMask = (boolean) $extensionConfiguration['useDevIpMask'];
 		if ($useDevIpMask === TRUE) {
 				// Abort if devIPmask is wildcarded
 			if ($devIPmask != '*') {
-				$message = '<h1>Access Denied</h1>
-							<p>
-								This phpMyAdmin-Module was configured with IP-based access restrictions and your
-								REMOTE_ADDR ('.$remoteAddress.') is not in TYPO3 devIPmask ('.$devIPmask.').
-							</p>';
-				if (!\TYPO3\CMS\Core\Utility\GeneralUtility::cmpIP($remoteAddress, $devIPmask)) {
+				$message = '<h1>' . $GLOBALS['LANG']->getLL('module.headline.accessDenied') . '</h1>
+							<p>' . sprintf($GLOBALS['LANG']->getLL('module.message.accessDenied.devIpMask'), $remoteAddress, $devIPmask) . '</p>';
+				if (!GeneralUtility::cmpIP($remoteAddress, $devIPmask)) {
 					die($message);
 				}
 			}
 		}
 
-			// Check for ip restriction, and die if not allowed
+		// Check for ip restriction, and die if not allowed
 		$allowedIps = trim($extensionConfiguration['allowedIps']);
 		if (!empty($allowedIps)) {
-			$message = '<h1>Access Denied</h1>
-						<p>
-							This phpMyAdmin-Module was configured with IP-based access restrictions and your
-							REMOTE_ADDR ('.$remoteAddress.') is not in the list of allowed IPs ('.$allowedIps.').
-						</p>';
-			if (!\TYPO3\CMS\Core\Utility\GeneralUtility::cmpIP($remoteAddress, $allowedIps)) {
+			$message = '<h1>' . $GLOBALS['LANG']->getLL('module.headline.accessDenied') . '</h1>
+						<p>' . sprintf($GLOBALS['LANG']->getLL('module.message.accessDenied.allowedIps'), $remoteAddress, $allowedIps) . '</p>';
+			if (!GeneralUtility::cmpIP($remoteAddress, $allowedIps)) {
 				die($message);
 			}
 		}
@@ -103,13 +105,13 @@ class PmaBeModule {
 		// Path to install dir
 		$this->MCONF['PMA_absolute_path'] = $extPath.$this->MCONF['PMA_subdir'];
 
-			// PMA uses relative file inclusion, so we need to ensure a proper include_path
+		// PMA uses relative file inclusion, so we need to ensure a proper include_path
 		@set_include_path($this->MCONF['PMA_absolute_path'] . PATH_SEPARATOR . get_include_path());
 
 		// Path to web dir
-		$this->MCONF['PMA_relative_path'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('phpmyadmin').$this->MCONF['PMA_subdir'];
+		$this->MCONF['PMA_relative_path'] = ExtensionManagementUtility::extRelPath('phpmyadmin').$this->MCONF['PMA_subdir'];
 
-			// If phpMyAdmin is configured in the conf.php script, we continue to load it...
+		// If phpMyAdmin is configured in the conf.php script, we continue to load it...
 		if ($this->MCONF['PMA_absolute_path'] && @is_dir($this->MCONF['PMA_absolute_path'])) {
 
 				// Need to have cookie visible from parent directory
@@ -125,6 +127,11 @@ class PmaBeModule {
 			$_SESSION['PMA_single_signon_password'] = TYPO3_db_password;
 			$_SESSION['PMA_single_signon_host'] = TYPO3_db_host;
 			$_SESSION['PMA_single_signon_only_db'] = TYPO3_db;
+
+			// If a socket connection is configured, use this for mysqli
+			if (isset($GLOBALS['TYPO3_CONF_VARS']['DB']['socket'])) {
+				$_SESSION['PMA_typo_socket'] = $GLOBALS['TYPO3_CONF_VARS']['DB']['socket'];
+			}
 
 				// Configure some other parameters
 			$_SESSION['PMA_extConf'] = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin'];
@@ -151,17 +158,19 @@ class PmaBeModule {
 			}
 			$_SESSION['PMA_typo_db'] = TYPO3_db;
 
-			$id = session_id();
+			// Get current session id
+			$currentSessionId = session_id();
 
-				// Force to set the cookie according to issue #8884
-				// http://bugs.typo3.org/view.php?id=8884#c23323
-			setcookie($session_name, $id, 0, '/', '');
+			// Force to set the cookie according to issue #8884
+			// http://bugs.typo3.org/view.php?id=8884#c23323
+			setcookie($session_name, $currentSessionId, 0, '/', '');
 
-				// Close that session
+			// Close that session
 			session_write_close();
 
-				// Mapping language keys for phpMyAdmin
-			$LANG_KEY_MAP = array(
+			// Mapping language keys for phpMyAdmin
+			$languageKeyMapping = array(
+				'default'=>'en',
 				'dk'=>'da',
 				'de'=>'de',
 				'no'=>'no',
@@ -173,37 +182,40 @@ class PmaBeModule {
 				'pl'=>'pl',
 				'si'=>'sk'
 			);
-
-			$LANG_KEY = $LANG_KEY_MAP[$LANG->lang];
-			if (!$LANG_KEY) {
-				$LANG_KEY = 'en';
+			$languageKey = $languageKeyMapping[$GLOBALS['LANG']->lang];
+			if (!$languageKey) {
+				$languageKey = 'en';
 			}
 
-				// Redirect to phpMyAdmin (should use absolute URL here!), setting default database
-			$redirect_uri = $_SESSION['PMA_SignonURL'].'?lang='.$LANG_KEY.'&db='.urlencode(TYPO3_db);
+			// Redirect to phpMyAdmin (should use absolute URL here!), setting default database
+			$redirectUri = GeneralUtility::locationHeaderUrl(
+				$_SESSION['PMA_SignonURL'] . '?lang=' . $languageKey . '&db=' . urlencode(TYPO3_db)
+			);
 
-				// Build and set cache-header header
+			// Build and set cache-header header
 			$headers = array(
 				'Expires: Mon, 26 Jul 1997 05:00:00 GMT',
 				'Pragma: no-cache',
-				'Cache-Control: private',
-				'Location: '.$redirect_uri
+				'Cache-Control: private'
 			);
-
-				// Send all headers
+			// Send all headers
 			foreach($headers as $header) {
 				header($header);
 			}
 
+			\TYPO3\CMS\Core\Utility\HttpUtility::redirect(
+				$redirectUri,
+				\TYPO3\CMS\Core\Utility\HttpUtility::HTTP_STATUS_302
+			);
+
 		} else {
-				// No configuration set
-			$this->doc = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('mediumDoc');
-			$this->doc->backPath = $BACK_PATH;
-			$this->content = $this->doc->startPage($LANG->getLL('title'));
-			$this->content .= ('
-				<h3>phpMyAdmin module was not installed?</h3>
-				'.($this->MCONF['PMA_subdir'] && !@is_dir($this->MCONF['PMA_subdir'])?'<hr /><strong>ERROR: The directory, '.$this->MCONF['PMA_subdir'].', was NOT found!</strong><HR>':'').'
-			');
+			// Render body
+			$this->doc = GeneralUtility::makeInstance('TYPO3\CMS\Backend\Template\DocumentTemplate');
+			$this->content = $this->doc->startPage($GLOBALS['LANG']->getLL('module.title'));
+			$this->content .= '<h1>' . $GLOBALS['LANG']->getLL('module.headline.error') . '</h1>';
+			// No configuration set
+			$this->content .= '<p>' . sprintf($GLOBALS['LANG']->getLL('module.error.invalidConfiguration'), $this->MCONF['PMA_subdir']) . '</p>';
+			// End document
 			$this->content .= $this->doc->endPage();
 		}
 	}
@@ -222,7 +234,7 @@ class PmaBeModule {
 $MCONF['name'] = 'tools_txphpmyadmin';
 $MCONF['script'] = '_DISPATCH';
 $MCONF['access'] = 'admin';
-$MCONF['PMA_subdir'] = 'Vendor/phpMyAdmin-4.4.7-all-languages/';
+$MCONF['PMA_subdir'] = 'Vendor/phpMyAdmin-4.4.10-all-languages/';
 $MCONF['PMA_script'] = 'index.php';
 
 // Proceed if TYPO3_MODE is defined
@@ -231,13 +243,13 @@ if ( !defined('TYPO3_MODE') ) {
 } else {
 	
 		// Proceed if BE loaded
-	if ( TYPO3_MODE == 'BE' ) {
+	if ( TYPO3_MODE === 'BE' ) {
 
 		// Apply access restrictions
 		$GLOBALS['BE_USER']->modAccess($MCONF, 1);
 
 		// Make instance:
-		$GLOBALS['SOBE'] = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('mehrwert\\Phpmyadmin\\PmaBeModule');
+		$GLOBALS['SOBE'] = GeneralUtility::makeInstance('mehrwert\\Phpmyadmin\\PmaBeModule');
 		$GLOBALS['SOBE']->main();
 		$GLOBALS['SOBE']->printContent();
 		

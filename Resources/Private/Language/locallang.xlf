@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+	<file t3:id="1434877844" source-language="en" datatype="plaintext" original="messages" date="2015-06-21T10:00:00Z" product-name="phpmyadmin">
+		<header/>
+		<body>
+			<trans-unit id="module.title">
+				<source>phpMyAdmin</source>
+			</trans-unit>
+			<trans-unit id="module.headline">
+				<source>phpMyAdmin module was not installed?</source>
+			</trans-unit>
+			<trans-unit id="module.headline.error">
+				<source>phpMyAdmin Error</source>
+			</trans-unit>
+			<trans-unit id="module.headline.accessDenied">
+				<source>Access Denied</source>
+			</trans-unit>
+			<trans-unit id="module.message.accessDenied.devIpMask">
+				<source>This phpMyAdmin-Module was configured with IP-based access restrictions based on the TYPO3 devIPmask. Your REMOTE_ADDR (%s) is not in TYPO3 devIPmask (%s).</source>
+			</trans-unit>
+			<trans-unit id="module.message.accessDenied.allowedIps">
+				<source>This phpMyAdmin-Module was configured with IP-based access restrictions and your REMOTE_ADDR (%s) is not in the list of allowed IPs (%s).</source>
+			</trans-unit>
+			<trans-unit id="module.error.invalidConfiguration">
+				<source>The required directory %s was not found!</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
