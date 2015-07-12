@@ -12,7 +12,7 @@
 $MCONF['name'] = 'tools_txphpmyadmin';
 $MCONF['script'] = '_DISPATCH';
 $MCONF['access'] = 'admin';
-$MCONF['PMA_subdir'] = 'Vendor/phpMyAdmin-4.4.10-all-languages/';
+$MCONF['PMA_subdir'] = 'Vendor/phpMyAdmin-4.4.11-all-languages/';
 $MCONF['PMA_script'] = 'index.php';
 $MLANG['default']['tabs_images']['tab'] = '../Resources/Public/Icons/module-phpmyadmin.png';
 $MLANG['default']['ll_ref'] = 'LLL:EXT:phpmyadmin/Resources/Private/Language/locallang_mod.xlf';
