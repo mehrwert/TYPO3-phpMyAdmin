@@ -34,6 +34,10 @@ The following is an overview of the changes in this extension. For more details 
 - [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.7)
 - [CHANGE] Set TYPO3 compatibility for 6.2 to 7.2
 
+2015-05-26 Andreas Beutel - Version 4.19.1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Feature: Add check for ``$GLOBALS['PHP_UNIT_TEST_RUNNING']`` in class ``tx_phpmyadmin_utilities`` to disable session and cookie handling if PHP Unit Tests are in progress using createFakeFrontEnd (). Set ``$GLOBALS['PHP_UNIT_TEST_RUNNING'] = TRUE;`` in your Unit Test in the ``setUp()`` method of the unit test.
+
 2015-05-23 Andreas Beutel - Version 4.19.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Updated pMA to the latest stable 4.0.x release (4.0.10.10)
