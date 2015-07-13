@@ -5,10 +5,16 @@
 
 .. _changelog:
 
+==========
 Change Log
-----------
+==========
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
+
+2015-07-13 Andreas Beutel - Version 5.0.1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [BUGFIX] Remove deprecated conf.php file and update ext_tables.php to prevent duplicate configuration - #68065
+- [CHANGE] Update documentation and add new screenshot and fix some spelling errors
 
 2015-07-12 Andreas Beutel - Version 5.0.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
