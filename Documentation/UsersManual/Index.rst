@@ -15,8 +15,9 @@
 .. role::   php(code)
 
 
+============
 Users manual
-------------
+============
 
 For help visit the pMA website -
 http://www.phpmyadmin.net/documentation/ - and Wiki -
