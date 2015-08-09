@@ -11,6 +11,11 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2015-08-10 Andreas Beutel - Version 5.1.0
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.13.1)
+- [CHANGE] Set TYPO3 compatibility for 6.2 to 7.4
+
 2015-07-13 Andreas Beutel - Version 5.0.1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [BUGFIX] Remove deprecated conf.php file and update ext_tables.php to prevent duplicate configuration - #68065
