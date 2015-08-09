@@ -7,7 +7,7 @@ conf.py:
   copyright: 2002-2015
   project: phpMyAdmin Extension for TYPO3
   version: 5.0
-  release: 5.0.0
+  release: 5.1.0
   latex_documents:
   - - Index
     - phpmyadmin.tex
