@@ -17,34 +17,37 @@
  */
 @ini_set('session.use_trans_sid', 0);
 
-	// Define the session name
+// TYPO3 extension configuration
+$extensionConfiguration = array();
+
+// Define the session name
 $session_name = 'tx_phpmyadmin';
 
-	// Code taken from phpMyAdmin sign-on script
+// Code taken from phpMyAdmin sign-on script
 if (isset($_COOKIE[$session_name])) {
 
-		// End current session
+	// End current session
 	$old_session = session_name();
 	$old_id = session_id();
 	session_write_close();
 
-		// Load config session
+	// Load config session
 	session_name($session_name);
 	session_id($_COOKIE[$session_name]);
 	session_start();
 
-		// Get additional config set in TYPO3
+	// Get additional config set in TYPO3
 	$extensionConfiguration['PMA_typo3_db'] = $_SESSION['PMA_typo3_db'];
 	$extensionConfiguration['PMA_typo3_socket'] = $_SESSION['PMA_typo3_socket'];
-	$extensionConfiguration['PMA_hideOtherDBs'] = $_SESSION['PMA_hideOtherDBs'];
+	$extensionConfiguration['PMA_hideOtherDBs'] = intval($_SESSION['PMA_hideOtherDBs']);
 	$extensionConfiguration['PMA_uploadDir'] = $_SESSION['PMA_uploadDir'];
 	$extensionConfiguration['PMA_SignonURL'] = ($_SESSION['PMA_SignonURL'] != '' ? $_SESSION['PMA_SignonURL'] : '../../BeModule/index.php');
 	$extensionConfiguration['PMA_LogoutURL'] = ($_SESSION['PMA_LogoutURL'] != '' ? $_SESSION['PMA_LogoutURL'] : '/typo3/logout.php');
 
-		// End config session/
+	// End config session/
 	session_write_close();
 
-		// Restart phpMyAdmin session
+	// Restart phpMyAdmin session
 	session_name($old_session);
 	if (!empty($old_id)) {
 		session_id($old_id);
@@ -54,7 +57,7 @@ if (isset($_COOKIE[$session_name])) {
 	// session_start();
 }
 
-	// Define upload dir if enabled
+// Define upload dir if enabled
 if (trim($extensionConfiguration['PMA_uploadDir']) != '' && @file_exists(trim($extensionConfiguration['PMA_uploadDir'])) == 1) {
 	// Directories for saving/loading files from server
 	$cfg['UploadDir'] = trim($extensionConfiguration['PMA_uploadDir']);
@@ -82,7 +85,7 @@ if (isset($extensionConfiguration['PMA_typo3_socket'])) {
 }
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['auth_type'] = 'signon';
-$cfg['Servers'][$i]['only_db'] = ( $extensionConfiguration['PMA_hideOtherDBs'] == 1 ? $extensionConfiguration['PMA_typo3_db'] : '' );
+$cfg['Servers'][$i]['only_db'] = ( $extensionConfiguration['PMA_hideOtherDBs'] === 1 ? array($extensionConfiguration['PMA_typo3_db']) : array($extensionConfiguration['PMA_typo3_db'], '*') );
 $cfg['Servers'][$i]['verbose'] = 'TYPO3 DB Host';
 $cfg['Servers'][$i]['pmadb'] = 'tx_phpmyadmin';
 $cfg['Servers'][$i]['nopassword'] = true;
@@ -96,30 +99,9 @@ $cfg['Servers'][$i]['LogoutURL'] = $extensionConfiguration['PMA_LogoutURL'];
 /* End of servers configuration */
 
 $cfg['ThemeDefault'] = 'pmahomme';
-$cfg['LeftFrameLight'] = true;
-$cfg['LeftFrameDBTree'] = true;
-$cfg['LeftFrameDBSeparator'] = '_';
-$cfg['LeftFrameTableSeparator'] = '__';
-$cfg['LeftFrameTableLevel'] = 1;
-$cfg['LeftDisplayLogo'] = false;
-$cfg['LeftDisplayServers'] = false;
-$cfg['LeftDefaultTabTable'] = 'sql.php';
 $cfg['DisplayServersList'] = false;
-$cfg['DisplayDatabasesList'] = 'auto';
-$cfg['LeftPointerEnable'] = true;
-#$cfg['DefaultTabServer'] = 'main.php';
-#$cfg['DefaultTabDatabase'] = 'db_structure.php';
-#$cfg['DefaultTabTable'] = 'tbl_structure.php';
-$cfg['LightTabs'] = false;
-$cfg['ErrorIconic'] = true;
-$cfg['MainPageIconic'] = true;
-$cfg['ReplaceHelpImg'] = true;
-$cfg['NavigationBarIconic'] = 'both';
-$cfg['PropertiesIconic'] = true;
 $cfg['BrowsePointerEnable'] = true;
 $cfg['BrowseMarkerEnable'] = true;
-$cfg['ModifyDeleteAtRight'] = false;
-$cfg['ModifyDeleteAtLeft'] = true;
 $cfg['RepeatCells'] = 100;
 $cfg['DefaultDisplay'] = 'horizontal';
 $cfg['TextareaCols'] = 40;
@@ -129,13 +111,8 @@ $cfg['TextareaAutoSelect'] = false;
 $cfg['CharEditing'] = 'input';
 $cfg['CharTextareaCols'] = 40;
 $cfg['CharTextareaRows'] = 2;
-$cfg['CtrlArrowsMoving'] = true;
 $cfg['DefaultPropDisplay'] = 'horizontal';
 $cfg['InsertRows'] = 2;
-$cfg['EditInWindow'] = true;
-$cfg['QueryWindowHeight'] = 510;
-$cfg['QueryWindowWidth'] = 640;
-$cfg['QueryWindowDefTab'] = 'sql';
 $cfg['AllowThirdPartyFraming'] = true;
 $cfg['VersionCheck'] = false;
 $cfg['PmaNoRelation_DisableWarning'] = true;
