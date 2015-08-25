@@ -4,8 +4,8 @@ hideOtherDBs = 1
   # cat=basic; type=string; label=Path for database dumps: If starting with a slash it's assumed as an absolute path to the directory where the dumps should be saved, otherwise it's relative to the TYPO3 installation
 uploadDir = uploads/tx_phpmyadmin
 
-  # cat=basic; type=string; label=Allowed IPs: Comma separated list of IPs that may access this extension
+  # cat=basic; type=string; label=Allowed IPs: Comma separated list of IPs that may access the phpMyAdmin extension in the browser (this check is performed in addition to the required TYPO3 Backend session)
 allowedIps =
 
-  # cat=basic; type=boolean; label=Use devIpMask: Use devIpMask from Install Tool (notice: overrules above setting)
+  # cat=basic; type=boolean; label=Use devIpMask: Use the devIpMask (defined in the TYPO3 Install Tool) for access checks - overrules above setting
 useDevIpMask = 0

@@ -126,11 +126,12 @@ class PmaBeModule {
 			$_SESSION['PMA_single_signon_user'] = TYPO3_db_username;
 			$_SESSION['PMA_single_signon_password'] = TYPO3_db_password;
 			$_SESSION['PMA_single_signon_host'] = TYPO3_db_host;
+			$_SESSION['PMA_single_signon_port'] = $GLOBALS['TYPO3_CONF_VARS']['DB']['port'];
 			$_SESSION['PMA_single_signon_only_db'] = TYPO3_db;
 
 			// If a socket connection is configured, use this for mysqli
 			if (isset($GLOBALS['TYPO3_CONF_VARS']['DB']['socket'])) {
-				$_SESSION['PMA_typo_socket'] = $GLOBALS['TYPO3_CONF_VARS']['DB']['socket'];
+				$_SESSION['PMA_typo3_socket'] = $GLOBALS['TYPO3_CONF_VARS']['DB']['socket'];
 			}
 
 				// Configure some other parameters
@@ -156,7 +157,7 @@ class PmaBeModule {
 			} else {
 				$_SESSION['PMA_uploadDir'] = $extensionConfiguration['uploadDir'];
 			}
-			$_SESSION['PMA_typo_db'] = TYPO3_db;
+			$_SESSION['PMA_typo3_db'] = TYPO3_db;
 
 			// Get current session id
 			$currentSessionId = session_id();
@@ -234,7 +235,7 @@ class PmaBeModule {
 $MCONF['name'] = 'tools_txphpmyadmin';
 $MCONF['script'] = '_DISPATCH';
 $MCONF['access'] = 'admin';
-$MCONF['PMA_subdir'] = 'Vendor/phpMyAdmin-4.4.13.1-all-languages/';
+$MCONF['PMA_subdir'] = 'Vendor/phpMyAdmin-4.4.14-all-languages/';
 $MCONF['PMA_script'] = 'index.php';
 
 // Proceed if TYPO3_MODE is defined

@@ -11,6 +11,12 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2015-08-24 Andreas Beutel - Version 5.1.1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [BUGFIX] Fix wrong module path in config.inc.php - #69298
+- [CHANGE] Rename variable keys from typo_ to typo3_
+- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.14)
+
 2015-08-10 Andreas Beutel - Version 5.1.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.13.1)
