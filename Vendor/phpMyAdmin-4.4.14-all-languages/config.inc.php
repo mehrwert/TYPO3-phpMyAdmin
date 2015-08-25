@@ -85,8 +85,6 @@ if (isset($extensionConfiguration['PMA_typo3_socket'])) {
 }
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['auth_type'] = 'signon';
-$cfg['Servers'][$i]['only_db'] = ( $extensionConfiguration['PMA_hideOtherDBs'] === 1 ? array($extensionConfiguration['PMA_typo3_db']) : array($extensionConfiguration['PMA_typo3_db'], '*') );
-$cfg['Servers'][$i]['verbose'] = 'TYPO3 DB Host';
 $cfg['Servers'][$i]['pmadb'] = 'tx_phpmyadmin';
 $cfg['Servers'][$i]['nopassword'] = true;
 $cfg['Servers'][$i]['AllowNoPasswordRoot'] = true;
@@ -96,8 +94,10 @@ $cfg['Servers'][$i]['SignonSession'] = 'tx_phpmyadmin';
 $cfg['Servers'][$i]['SignonURL'] = $extensionConfiguration['PMA_SignonURL'];
 $cfg['Servers'][$i]['LogoutURL'] = $extensionConfiguration['PMA_LogoutURL'];
 
-/* End of servers configuration */
+// Currently broken in pMA
+$cfg['Servers'][$i]['only_db'] = ( $extensionConfiguration['PMA_hideOtherDBs'] === 1 ? array($extensionConfiguration['PMA_typo3_db']) : array($extensionConfiguration['PMA_typo3_db'], '*') );
 
+// General configuration
 $cfg['ThemeDefault'] = 'pmahomme';
 $cfg['DisplayServersList'] = false;
 $cfg['BrowsePointerEnable'] = true;
