@@ -11,7 +11,7 @@
 // Configuration
 $MCONF['name'] = 'tools_txphpmyadmin';
 $MCONF['script'] = '_DISPATCH';
-$MCONF['PMA_subdir'] = 'Vendor/phpMyAdmin-4.4.15-all-languages/';
+$MCONF['PMA_subdir'] = 'Vendor/phpMyAdmin-4.4.15.1-all-languages/';
 $MCONF['PMA_script'] = 'index.php';
 
 // Localization
