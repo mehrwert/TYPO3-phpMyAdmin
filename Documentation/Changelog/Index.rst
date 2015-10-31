@@ -11,6 +11,13 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2015-10-31 Andreas Beutel - Version 5.1.3
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.1)
+- [CHANGE] Set TYPO3 compatibility for 6.2 to 7.6
+- [SECURITY] Includes a vendor security fix
+- `PMASA-2015-5 <https://www.phpmyadmin.net/security/PMASA-2015-5/>`_: Content spoofing vulnerability when redirecting user to an external site
+
 2015-09-29 Andreas Beutel - Version 5.1.2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15)
