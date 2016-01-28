@@ -11,6 +11,21 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2016-01-28 Andreas Beutel - Version 5.1.5
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.3)
+- [SECURITY] Includes critical vendor security fixes
+- `PMASA-2016-5 <https://www.phpmyadmin.net/security/PMASA-2016-5/>`_: Unsafe comparison of XSRF/CSRF token
+- [SECURITY] Includes non-critical vendor security fixes
+- `PMASA-2015-6 <https://www.phpmyadmin.net/security/PMASA-2015-6/>`_: Full path disclosure vulnerability
+- `PMASA-2016-1 <https://www.phpmyadmin.net/security/PMASA-2016-1/>`_: Multiple full path disclosure vulnerabilities
+- `PMASA-2016-2 <https://www.phpmyadmin.net/security/PMASA-2016-2/>`_: Unsafe generation of XSRF/CSRF token
+- `PMASA-2016-3 <https://www.phpmyadmin.net/security/PMASA-2016-3/>`_: Multiple XSS vulnerabilities
+- `PMASA-2016-4 <https://www.phpmyadmin.net/security/PMASA-2016-4/>`_: Insecure password generation in JavaScript
+- `PMASA-2016-6 <https://www.phpmyadmin.net/security/PMASA-2016-6/>`_: Multiple full path disclosure vulnerabilities
+- `PMASA-2016-7 <https://www.phpmyadmin.net/security/PMASA-2016-7/>`_: XSS vulnerability in normalization page
+- [FEATURE] Provide composer.json (thanks to André Wuttig for the contribution)
+
 2015-11-01 Andreas Beutel - Version 5.1.4
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [BUGFIX] Update version number in vendor path and Settings.xml
