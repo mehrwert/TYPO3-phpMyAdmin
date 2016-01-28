@@ -3,7 +3,7 @@
 * Copyright notice
 *
 * (c) 1999-2005 Kasper Skaarhoj (kasperYYYY@typo3.com)
-* (c) 2006-2015 mehrwert (typo3@mehrwert.de)
+* (c) 2006-2016 mehrwert (typo3@mehrwert.de)
 * All rights reserved
 *
 * This script is part of the TYPO3 project. The TYPO3 project is
@@ -235,7 +235,7 @@ class PmaBeModule {
 $MCONF['name'] = 'tools_txphpmyadmin';
 $MCONF['script'] = '_DISPATCH';
 $MCONF['access'] = 'admin';
-$MCONF['PMA_subdir'] = 'Vendor/phpMyAdmin-4.4.15.1-all-languages/';
+$MCONF['PMA_subdir'] = 'Vendor/phpMyAdmin-4.4.15.3-all-languages/';
 $MCONF['PMA_script'] = 'index.php';
 
 // Proceed if TYPO3_MODE is defined
