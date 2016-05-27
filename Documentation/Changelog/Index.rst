@@ -11,6 +11,14 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2016-05-27 Andreas Beutel - Version 5.1.6
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.6)
+- [SECURITY] Includes non-critical vendor security fixes
+- `PMASA-2016-11 <https://www.phpmyadmin.net/security/PMASA-2016-11/>`_: Multiple XSS vulnerabilities
+- `PMASA-2016-12 <https://www.phpmyadmin.net/security/PMASA-2016-12/>`_: Multiple XSS vulnerabilities
+- `PMASA-2016-16 <https://www.phpmyadmin.net/security/PMASA-2016-16/>`_: Self XSS
+
 2016-01-28 Andreas Beutel - Version 5.1.5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.3)
