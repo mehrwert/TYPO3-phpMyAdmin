@@ -8,6 +8,8 @@ execute any SQL statement - see http://www.phpmyadmin.net/
 
 ## Requirements and known issues
 
-Version 5.x of the TYPO3 phpMyAdmin extension includes the latest release of phpMyAdmin (4.x). If your need
-an older version compatible with PHP 5.2 and MySQL 5 just use one of the 4.x releases. The 4x releases 
-are supported for security fixes only (until Jan 1, 2016).
+Version 5.x of the TYPO3 phpMyAdmin extension includes the latest release of phpMyAdmin (4.x).
+phpMyAdmin 4.4.x is officially supported for security fixes only until October 1, 2016!
+
+If you're in need of an older version compatible with PHP 5.2 and MySQL 5 just use one of the 4.x 
+releases. The 4x releases were supported for security fixes only until Jan 1, 2016.

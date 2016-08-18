@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "https://www.mehrwert.de/ueber-uns/sponsoring/",
   "license": ["GPL-2.0+"],
-  "version": "5.1.6",
+  "version": "5.1.7",
   "require": {
     "typo3/cms-core": ">=6.2.0,<8.0"
   },

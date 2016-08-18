@@ -11,6 +11,47 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2016-08-17 Andreas Beutel - Version 5.1.7
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.8)
+- [SECURITY] Includes critical vendor security fixes
+- `PMASA-2016-56 <https://www.phpmyadmin.net/security/PMASA-2016-56/>`_: Remote code execution vulnerability when PHP is running with dbase extension
+- `PMASA-2016-54 <https://www.phpmyadmin.net/security/PMASA-2016-54/>`_: Remote code execution vulnerability when run as CGI
+- `PMASA-2016-52 <https://www.phpmyadmin.net/security/PMASA-2016-52/>`_: ArbitraryServerRegexp bypass
+- `PMASA-2016-45 <https://www.phpmyadmin.net/security/PMASA-2016-45/>`_: DOS attack with forced persistent connections
+- [SECURITY] Includes serious vendor security fixes
+- `PMASA-2016-53 <https://www.phpmyadmin.net/security/PMASA-2016-53/>`_: Denial of service (DOS) attack by changing password to a very long string
+- `PMASA-2016-47 <https://www.phpmyadmin.net/security/PMASA-2016-47/>`_: IPv6 and proxy server IP-based authentication rule circumvention
+- `PMASA-2016-42 <https://www.phpmyadmin.net/security/PMASA-2016-42/>`_: SQL injection attack as control user
+- `PMASA-2016-39 <https://www.phpmyadmin.net/security/PMASA-2016-39/>`_: SQL injection attack
+- `PMASA-2016-37 <https://www.phpmyadmin.net/security/PMASA-2016-37/>`_: Path traversal with SaveDir and UploadDir
+- `PMASA-2016-36 <https://www.phpmyadmin.net/security/PMASA-2016-36/>`_: Local file exposure through symlinks with UploadDir
+- `PMASA-2016-35 <https://www.phpmyadmin.net/security/PMASA-2016-35/>`_: Local file exposure
+- `PMASA-2016-34 <https://www.phpmyadmin.net/security/PMASA-2016-34/>`_: SQL injection attack
+- `PMASA-2016-29 <https://www.phpmyadmin.net/security/PMASA-2016-29/>`_: Weakness with cookie encryption
+- `PMASA-2016-22 <https://www.phpmyadmin.net/security/PMASA-2016-22/>`_: DOS attack
+- `PMASA-2016-21 <https://www.phpmyadmin.net/security/PMASA-2016-21/>`_: Multiple XSS vulnerabilities
+- [SECURITY] Includes moderate vendor security fixes
+- `PMASA-2016-51 <https://www.phpmyadmin.net/security/PMASA-2016-51/>`_: Reflected File Download attack
+- `PMASA-2016-50 <https://www.phpmyadmin.net/security/PMASA-2016-50/>`_: Referrer leak in url.php
+- `PMASA-2016-49 <https://www.phpmyadmin.net/security/PMASA-2016-49/>`_: Bypass URL redirect protection
+- `PMASA-2016-46 <https://www.phpmyadmin.net/security/PMASA-2016-46/>`_: Denial of service (DOS) attack by for loops
+- `PMASA-2016-43 <https://www.phpmyadmin.net/security/PMASA-2016-43/>`_: Unvalidated data passed to unserialize()
+- `PMASA-2016-32 <https://www.phpmyadmin.net/security/PMASA-2016-32/>`_: PHP code injection
+- `PMASA-2016-30 <https://www.phpmyadmin.net/security/PMASA-2016-30/>`_: Multiple XSS vulnerabilities
+- `PMASA-2016-28 <https://www.phpmyadmin.net/security/PMASA-2016-28/>`_: Referrer leak in transformations
+- `PMASA-2016-27 <https://www.phpmyadmin.net/security/PMASA-2016-27/>`_: Unsafe handling of preg_replace parameters
+- `PMASA-2016-26 <https://www.phpmyadmin.net/security/PMASA-2016-26/>`_: Multiple XSS vulnerabilities
+- `PMASA-2016-23 <https://www.phpmyadmin.net/security/PMASA-2016-23/>`_: Multiple full path disclosure vulnerabilities
+- `PMASA-2016-19 <https://www.phpmyadmin.net/security/PMASA-2016-19/>`_: SQL injection attack
+- [SECURITY] Includes non-critical vendor security fixes
+- `PMASA-2016-55 <https://www.phpmyadmin.net/security/PMASA-2016-55/>`_: Denial of service (DOS) attack with dbase extension
+- `PMASA-2016-48 <https://www.phpmyadmin.net/security/PMASA-2016-48/>`_: Detect if user is logged in
+- `PMASA-2016-41 <https://www.phpmyadmin.net/security/PMASA-2016-41/>`_: Denial of service (DOS) attack in transformation feature
+- `PMASA-2016-38 <https://www.phpmyadmin.net/security/PMASA-2016-38/>`_: Multiple XSS vulnerabilities
+- `PMASA-2016-33 <https://www.phpmyadmin.net/security/PMASA-2016-33/>`_: Full path disclosure
+- `PMASA-2016-17 <https://www.phpmyadmin.net/security/PMASA-2016-17/>`_: BBCode injection vulnerability
+
 2016-05-27 Andreas Beutel - Version 5.1.6
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.6)
