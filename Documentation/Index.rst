@@ -24,7 +24,7 @@ phpMyAdmin for TYPO3
       2002-11-01
 
 :Changed:
-      2016-08-17
+      2016-11-30
 
 :Changed by:
       Andreas Beutel
