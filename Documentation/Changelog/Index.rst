@@ -11,6 +11,23 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2016-11-30 Andreas Beutel - Version 5.1.8
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.9)
+- [SECURITY] Includes vendor security fixes
+- `PMASA-2016-58 <https://www.phpmyadmin.net/security/PMASA-2016-58/>`_: Unsafe generation of $cfg['blowfish_secret']
+- `PMASA-2016-59 <https://www.phpmyadmin.net/security/PMASA-2016-59/>`_: phpMyAdmin's phpinfo functionality is removed
+- `PMASA-2016-60 <https://www.phpmyadmin.net/security/PMASA-2016-60/>`_: AllowRoot and allow/deny rule bypass with specially-crafted username
+- `PMASA-2016-61 <https://www.phpmyadmin.net/security/PMASA-2016-61/>`_: Username matching weaknesses with allow/deny rules
+- `PMASA-2016-62 <https://www.phpmyadmin.net/security/PMASA-2016-62/>`_: Possible to bypass logout timeout
+- `PMASA-2016-63 <https://www.phpmyadmin.net/security/PMASA-2016-63/>`_: Full path disclosure (FPD) weaknesses
+- `PMASA-2016-64 <https://www.phpmyadmin.net/security/PMASA-2016-64/>`_: Multiple XSS weaknesses
+- `PMASA-2016-65 <https://www.phpmyadmin.net/security/PMASA-2016-65/>`_: Multiple denial-of-service (DOS) vulnerabilities
+- `PMASA-2016-66 <https://www.phpmyadmin.net/security/PMASA-2016-66/>`_: Possible to bypass white-list protection for URL redirection
+- `PMASA-2016-69 <https://www.phpmyadmin.net/security/PMASA-2016-69/>`_: Multiple SQL injection vulnerabilities
+- `PMASA-2016-70 <https://www.phpmyadmin.net/security/PMASA-2016-70/>`_: Incorrect serialized string parsing
+- `PMASA-2016-71 <https://www.phpmyadmin.net/security/PMASA-2016-71/>`_: CSRF token not stripped from the URL
+
 2016-08-17 Andreas Beutel - Version 5.1.7
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.8)
