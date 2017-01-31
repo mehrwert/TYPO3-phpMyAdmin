@@ -11,6 +11,19 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2017-01-31 Andreas Beutel - Version 5.1.9
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.10)
+- [SECURITY] Includes non-critical vendor security fixes
+- `PMASA-2017-7 <https://www.phpmyadmin.net/security/PMASA-2017-7/>`_: DOS in replication status
+- `PMASA-2017-6 <https://www.phpmyadmin.net/security/PMASA-2017-6/>`_: SSRF in replication
+- `PMASA-2017-5 <https://www.phpmyadmin.net/security/PMASA-2017-5/>`_: Cookie attribute injection attack
+- `PMASA-2017-4 <https://www.phpmyadmin.net/security/PMASA-2017-4/>`_: CSS injection in themes
+- `PMASA-2017-3 <https://www.phpmyadmin.net/security/PMASA-2017-3/>`_: DOS vulnerability in table editing
+- `PMASA-2017-1 <https://www.phpmyadmin.net/security/PMASA-2017-1/>`_: Open redirect
+- [SECURITY] Includes minor vendor security fixes
+- `PMASA-2017-2 <https://www.phpmyadmin.net/security/PMASA-2017-2/>`_: php-gettext code execution
+
 2016-11-30 Andreas Beutel - Version 5.1.8
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.9)
