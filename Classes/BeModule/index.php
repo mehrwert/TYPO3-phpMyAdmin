@@ -22,7 +22,7 @@
 *
 * This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
-namespace mehrwert\Phpmyadmin;
+namespace mehrwert\Phpmyadmin\BeModule;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
@@ -39,7 +39,7 @@ class PmaBeModule {
 
 	/**
 	 * Configuration for the module
-	 * @var	Array
+	 * @var	array $MCONF
 	 */
 	public $MCONF = array();
 
@@ -70,7 +70,15 @@ class PmaBeModule {
 		$typo3DocumentRoot = GeneralUtility::getIndpEnv('TYPO3_DOCUMENT_ROOT');
 
 		// Set class config for module
-		$this->MCONF = $GLOBALS['MCONF'];
+		#$this->MCONF = $GLOBALS['MCONF'];
+
+        $MCONF['name'] = 'tools_txphpmyadmin';
+        $MCONF['script'] = '_DISPATCH';
+        $MCONF['access'] = 'admin';
+        $MCONF['PMA_subdir'] = 'Vendor/phpMyAdmin-4.4.15.10-all-languages/';
+        $MCONF['PMA_script'] = 'index.php';
+
+        $this->MCONF = $MCONF;
 
 		// Get config
 		$extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin']);
@@ -122,12 +130,20 @@ class PmaBeModule {
 			session_name($session_name);
 			session_start();
 
-				// Store the credentials in the session
-			$_SESSION['PMA_single_signon_user'] = TYPO3_db_username;
-			$_SESSION['PMA_single_signon_password'] = TYPO3_db_password;
-			$_SESSION['PMA_single_signon_host'] = TYPO3_db_host;
-			$_SESSION['PMA_single_signon_port'] = $GLOBALS['TYPO3_CONF_VARS']['DB']['port'];
-			$_SESSION['PMA_single_signon_only_db'] = TYPO3_db;
+				// Store the credentials in the session - TYPO3 7.x
+		//	$_SESSION['PMA_single_signon_user'] = TYPO3_db_username;
+		//	$_SESSION['PMA_single_signon_password'] = TYPO3_db_password;
+		//	$_SESSION['PMA_single_signon_host'] = TYPO3_db_host;
+		//	$_SESSION['PMA_single_signon_port'] = $GLOBALS['TYPO3_CONF_VARS']['DB']['port'];
+		//	$_SESSION['PMA_single_signon_only_db'] = TYPO3_db;
+
+
+            $dbData = $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default'];
+            $_SESSION['PMA_single_signon_user'] = $dbData['user'];
+            $_SESSION['PMA_single_signon_password'] = $dbData['password'];
+            $_SESSION['PMA_single_signon_host'] = $dbData['host'];
+            $_SESSION['PMA_single_signon_port'] = $dbData['port'];
+            $_SESSION['PMA_single_signon_only_db'] = $dbData['dbname'];
 
 			// If a socket connection is configured, use this for mysqli
 			if (isset($GLOBALS['TYPO3_CONF_VARS']['DB']['socket'])) {
@@ -157,7 +173,7 @@ class PmaBeModule {
 			} else {
 				$_SESSION['PMA_uploadDir'] = $extensionConfiguration['uploadDir'];
 			}
-			$_SESSION['PMA_typo3_db'] = TYPO3_db;
+			$_SESSION['PMA_typo3_db'] = $dbData['dbname'];
 
 			// Get current session id
 			$currentSessionId = session_id();
@@ -190,7 +206,7 @@ class PmaBeModule {
 
 			// Redirect to phpMyAdmin (should use absolute URL here!), setting default database
 			$redirectUri = GeneralUtility::locationHeaderUrl(
-				$_SESSION['PMA_SignonURL'] . '?lang=' . $languageKey . '&db=' . urlencode(TYPO3_db)
+				$_SESSION['PMA_SignonURL'] . '?lang=' . $languageKey . '&db=' . urlencode($dbData['dbname'])
 			);
 
 			// Build and set cache-header header
@@ -246,11 +262,8 @@ if ( !defined('TYPO3_MODE') ) {
 		// Proceed if BE loaded
 	if ( TYPO3_MODE === 'BE' ) {
 
-		// Apply access restrictions
-		$GLOBALS['BE_USER']->modAccess($MCONF, 1);
-
-		// Make instance:
-		$GLOBALS['SOBE'] = GeneralUtility::makeInstance('mehrwert\\Phpmyadmin\\PmaBeModule');
+    	// Make instance:
+		$GLOBALS['SOBE'] = GeneralUtility::makeInstance(PmaBeModule::class);
 		$GLOBALS['SOBE']->main();
 		$GLOBALS['SOBE']->printContent();
 		
