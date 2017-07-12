@@ -4,9 +4,10 @@
   "description": "",
   "homepage": "https://www.mehrwert.de/ueber-uns/sponsoring/",
   "license": ["GPL-2.0"],
-  "version": "5.1.9",
+  "version": "5.2.0",
   "require": {
-    "typo3/cms-core": ">=6.2.0,<8.0"
+    "typo3/cms-core": ">=6.2.0,<=8.7.99",
+    "phpmyadmin/phpmyadmin": "^4.7"
   },
   "autoload": {
     "classmap": [
@@ -14,6 +15,7 @@
     ]
   },
   "replace": {
-    "phpmyadmin": "*"
+    "phpmyadmin": "*",
+    "typo3-ter/phpmyadmin": "*"
   }
 }
