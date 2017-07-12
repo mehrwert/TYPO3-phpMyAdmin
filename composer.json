@@ -12,7 +12,10 @@
   "autoload": {
     "classmap": [
       "Classes/Hooks"
-    ]
+    ],
+    "psr-4": {
+      "mehrwert\\Phpmyadmin\\": "Classes"
+    }
   },
   "replace": {
     "phpmyadmin": "*",
