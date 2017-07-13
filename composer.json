@@ -21,8 +21,8 @@
     "typo3-ter/phpmyadmin": "*"
   },
   "scripts": {
-    "post-install-cmd": [
-      "sh composer-post-install-cmd.sh"
+    "post-autoload-dump": [
+      "sh composer-post-autoload-dump.sh"
     ]
   }
 }
