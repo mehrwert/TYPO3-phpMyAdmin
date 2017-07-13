@@ -6,8 +6,7 @@
   "license": ["GPL-2.0"],
   "version": "5.2.0",
   "require": {
-    "typo3/cms-core": ">=6.2.0,<=8.7.99",
-    "phpmyadmin/phpmyadmin": "^4.7"
+    "typo3/cms-core": ">=6.2.0,<=8.7.99"
   },
   "autoload": {
     "classmap": [
@@ -20,5 +19,10 @@
   "replace": {
     "phpmyadmin": "*",
     "typo3-ter/phpmyadmin": "*"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "sh composer-post-install-cmd.sh"
+    ]
   }
 }

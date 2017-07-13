@@ -74,7 +74,7 @@ class PmaBeModule {
         $MCONF['name'] = 'tools_txphpmyadmin';
         $MCONF['script'] = '_DISPATCH';
         $MCONF['access'] = 'admin';
-        $MCONF['PMA_subdir'] = 'vendor/phpmyadmin/phpmyadmin/';
+        $MCONF['PMA_subdir'] = 'phpmyadmin/';
         $MCONF['PMA_script'] = 'index.php';
 
         $this->MCONF = $MCONF;
@@ -110,13 +110,13 @@ class PmaBeModule {
 		}
 
 		// Path to install dir
-		$this->MCONF['PMA_absolute_path'] = PATH_site.$this->MCONF['PMA_subdir'];
+		$this->MCONF['PMA_absolute_path'] = $extPath.$this->MCONF['PMA_subdir'];
 
 		// PMA uses relative file inclusion, so we need to ensure a proper include_path
 		@set_include_path($this->MCONF['PMA_absolute_path'] . PATH_SEPARATOR . get_include_path());
 
 		// Path to web dir
-		$this->MCONF['PMA_relative_path'] = ExtensionManagementUtility::siteRelPath('phpmyadmin').'../../../'.$this->MCONF['PMA_subdir'];
+		$this->MCONF['PMA_relative_path'] = ExtensionManagementUtility::siteRelPath('phpmyadmin').$this->MCONF['PMA_subdir'];
 
 		// If phpMyAdmin is configured in the conf.php script, we continue to load it...
 		if ($this->MCONF['PMA_absolute_path'] && @is_dir($this->MCONF['PMA_absolute_path'])) {
@@ -149,7 +149,7 @@ class PmaBeModule {
 				// Get signon uri for redirect
 			$path_ext = substr($extPath, strlen($typo3DocumentRoot), strlen($extPath));
 			$path_ext = (substr($path_ext, 0, 1) != '/'  ? '/'.$path_ext : $path_ext);
-			$path_pma = $path_ext.'../../../'.$this->MCONF['PMA_subdir'];
+			$path_pma = $path_ext.$this->MCONF['PMA_subdir'];
 			$_SESSION['PMA_SignonURL'] = $path_pma.'index.php';
 
 				// Try to get the TYPO3 backend uri even if it's installed in a subdirectory
