@@ -118,57 +118,24 @@ class PmaBeModule
         if ($this->MCONF['PMA_absolute_path'] && @is_dir($this->MCONF['PMA_absolute_path'])) {
 
             // Need to have cookie visible from parent directory
-            session_set_cookie_params(0, '/', '', 0);
+            session_set_cookie_params(0, '/', '', false, true);
 
             // Create signon session
             $session_name = 'tx_phpmyadmin';
             session_name($session_name);
             session_start();
 
-            // Store the credentials in the session - TYPO3 7.x
+            // Store the credentials in the session
             $dbData = $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default'];
             $_SESSION['PMA_single_signon_user'] = $dbData['user'];
             $_SESSION['PMA_single_signon_password'] = $dbData['password'];
             $_SESSION['PMA_single_signon_host'] = $dbData['host'];
             $_SESSION['PMA_single_signon_port'] = $dbData['port'];
-            $_SESSION['PMA_single_signon_only_db'] = $dbData['dbname'];
 
-            // If a socket connection is configured, use this for mysqli
-            if (isset($GLOBALS['TYPO3_CONF_VARS']['DB']['socket'])) {
-                $_SESSION['PMA_typo3_socket'] = $GLOBALS['TYPO3_CONF_VARS']['DB']['socket'];
-            }
-
-            // Configure some other parameters
-            $_SESSION['PMA_extConf'] = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin'];
-            $_SESSION['PMA_hideOtherDBs'] = $extensionConfiguration['hideOtherDBs'];
-
-            // Get signon uri for redirect
-            $path_ext = substr($extPath, strlen($typo3DocumentRoot), strlen($extPath));
-            $path_ext = (substr($path_ext, 0, 1) != '/' ? '/' . $path_ext : $path_ext);
-            $path_pma = $path_ext . $this->MCONF['PMA_subdir'];
-            $_SESSION['PMA_SignonURL'] = $path_pma . 'index.php';
-
-            // Try to get the TYPO3 backend uri even if it's installed in a subdirectory
-            // Compile logout path and add a slash if the returned string does not start with
-            $path_typo3 = substr(PATH_typo3, strlen($typo3DocumentRoot), strlen(PATH_typo3));
-            $path_typo3 = (substr($path_typo3, 0, 1) != '/' ? '/' . $path_typo3 : $path_typo3);
-            $_SESSION['PMA_LogoutURL'] = $path_typo3 . 'logout.php';
-
-            // Prepend document root if uploadDir does not start with a slash "/"
-            $extensionConfiguration['uploadDir'] = trim($extensionConfiguration['uploadDir']);
-            if (strpos($extensionConfiguration['uploadDir'], '/') !== 0) {
-                $_SESSION['PMA_uploadDir'] = $typo3DocumentRoot . '/' . $extensionConfiguration['uploadDir'];
-            } else {
-                $_SESSION['PMA_uploadDir'] = $extensionConfiguration['uploadDir'];
-            }
-            $_SESSION['PMA_typo3_db'] = $dbData['dbname'];
+            $_SESSION['PMA_single_signon_cfgupdate']['only_db'] = array($dbData['dbname']);
 
             // Get current session id
-            $currentSessionId = session_id();
-
-            // Force to set the cookie according to issue #8884
-            // http://bugs.typo3.org/view.php?id=8884#c23323
-            setcookie($session_name, $currentSessionId, 0, '/', '');
+            session_id();
 
             // Close that session
             session_write_close();
@@ -194,7 +161,7 @@ class PmaBeModule
 
             // Redirect to phpMyAdmin (should use absolute URL here!), setting default database
             $redirectUri = GeneralUtility::locationHeaderUrl(
-                $_SESSION['PMA_SignonURL'] . '?lang=' . $languageKey . '&db=' . urlencode($dbData['dbname'])
+                '/typo3conf/ext/phpmyadmin/phpmyadmin/index.php?lang=' . $languageKey . '&db=' . urlencode($dbData['dbname'])
             );
 
             // Build and set cache-header header
