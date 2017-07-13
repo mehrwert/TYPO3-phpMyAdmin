@@ -20,17 +20,20 @@ $showPhpMyAdminInWebModule = (boolean) $extensionConfiguration['showPhpMyAdminIn
 
 // If the backend is loaded, add the module
 if (TYPO3_MODE == 'BE') {
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addModule(
-		'tools',
-		'txphpmyadmin',
-		'',
-		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'BeModule/',
-		array(
-			'access' => 'admin',
-			'icon' => 'EXT:phpmyadmin/Resources/Public/Icons/module-phpmyadmin.png',
-			'labels' => 'LLL:EXT:phpmyadmin/Resources/Private/Language/locallang_mod.xlf',
-		)
-	);
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+        'mehrwert.Phpmyadmin',
+        'tools', // Make module a submodule of 'tools'
+        'phpmyadmin_mod1', // Submodule key
+        '', // Position
+        [
+            'Phpmyadmin' => 'index',
+        ],
+        [
+            'access' => 'admin',
+            'icon'   => 'EXT:phpmyadmin/Resources/Public/Icons/module-phpmyadmin.png',
+            'labels' => 'LLL:EXT:phpmyadmin/Resources/Private/Language/locallang_mod.xlf',
+        ]
+    );
 }
 
 // Do not load post processing class if TYPO3 is in CLI mode
