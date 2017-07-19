@@ -1,9 +1,3 @@
-  # cat=basic//10; type=boolean; label=Only show TYPO3 database in pMA: If enabled, only the TYPO3 database is available, otherwise pMA will show all databases the SQL-user has access to
-hideOtherDBs = 1
-
-  # cat=basic; type=string; label=Path for database dumps: If starting with a slash it's assumed as an absolute path to the directory where the dumps should be saved, otherwise it's relative to the TYPO3 installation
-uploadDir = uploads/tx_phpmyadmin
-
   # cat=basic; type=string; label=Allowed IPs: Comma separated list of IPs that may access the phpMyAdmin extension in the browser (this check is performed in addition to the required TYPO3 Backend session)
 allowedIps =
 
