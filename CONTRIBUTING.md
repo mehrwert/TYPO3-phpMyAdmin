@@ -17,7 +17,7 @@ Latest code of EXT:phpmyadmin is hosted on GitHub (https://github.com/mehrwert/T
 
 You need
 
-*   LAMP/MAMP/MNMP/your favorite Stack - with TYPO3 Versions 6.2 or 7.6
+*   LAMP/MAMP/MNMP/your favorite Stack - with TYPO3 Versions 8.7.x
 
 ## Links
 

@@ -14,15 +14,10 @@
    :class:  typoscript
 .. role::   php(code)
 
-.. |extensions-screenshot-6x|      image:: /Images/Extension_Screenshot_6x.png
+.. |extensions-screenshot-8x|      image:: /Images/Extension_Screenshot_8x.png
 .. :border: 0
 .. :align: left
-.. :name: Example Screenshot of phpMyAdmin in TYPO3 6.x Backend
-
-.. |extensions-screenshot-7x|      image:: /Images/Extension_Screenshot_7x.png
-.. :border: 0
-.. :align: left
-.. :name: Example Screenshot of phpMyAdmin in TYPO3 7.x Backend
+.. :name: Example Screenshot of phpMyAdmin in TYPO3 8.x Backend
 
 ============
 Introduction
@@ -44,11 +39,12 @@ Screenshots
 
 phpMyAdmin is seamless integrated into the TYPO3 backend:
 
-TYPO3 7.x
+TYPO3 8.x
 ---------
-|extensions-screenshot-7x|
+|extensions-screenshot-8x|
 
-TYPO3 6.x
----------
-|extensions-screenshot-6x|
+TYPO3 7.x and TYPO3 6.x
+-----------------------
+
+Requires extension version < 5.2.
 
