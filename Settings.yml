@@ -4,10 +4,10 @@
 
 ---
 conf.py:
-  copyright: 2002-2017
+  copyright: 2002-2018
   project: phpMyAdmin Extension for TYPO3
-  version: 5.2.0
-  release: 5.2.0
+  version: 5.2.1
+  release: 5.2.1
   latex_documents:
   - - Index
     - phpmyadmin.tex

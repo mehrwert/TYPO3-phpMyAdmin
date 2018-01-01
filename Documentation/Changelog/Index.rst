@@ -11,6 +11,14 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2018-01-01 Andreas Beutel - Version 5.2.1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [FEATURE] Updated pMA to the latest stable 4.7.x release (4.7.7)
+- [SECURITY] Includes critical vendor security fixes
+- `PMASA-2017-9 <https://www.phpmyadmin.net/security/PMASA-2017-9/>`_: XSRF/CSRF vulnerability in phpMyAdmin
+- [SECURITY] Includes non-critical vendor security fixes
+- `PMASA-2017-8 <https://www.phpmyadmin.net/security/PMASA-2017-8/>`_: Bypass $cfg['Servers'][$i]['AllowNoPassword']
+
 2017-07-21 Andreas Beutel - Version 5.2.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [!!!][TASK] Refactor BE Module for TYPO3 8.x compatibility (thanks to Sven Juergens for the contribution)
