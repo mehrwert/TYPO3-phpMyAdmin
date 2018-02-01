@@ -2,9 +2,21 @@
   "name": "mehrwert/phpmyadmin",
   "type": "typo3-cms-extension",
   "description": "Third party 'phpMyAdmin' administration module for TYPO3. Access to admin-users only.",
-  "homepage": "https://www.mehrwert.de/ueber-uns/sponsoring/",
+  "keywords": [
+    "TYPO3",
+    "extension",
+    "phpmyadmin"
+  ],
+  "homepage": "https://www.mehrwert.de",
+  "authors": [
+    {
+      "name": "Andreas Beutel",
+      "email": "typo3@mehrwert.de",
+      "role": "Developer",
+      "homepage": "https://www.mehrwert.de"
+    }
+  ],
   "license": ["GPL-2.0"],
-  "version": "5.2.1",
   "require": {
     "typo3/cms-core": ">=8.7.0,<9.0"
   },
