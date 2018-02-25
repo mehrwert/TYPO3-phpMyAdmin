@@ -11,6 +11,12 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2018-02-25 Andreas Beutel - Version 5.2.2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [FEATURE] Updated pMA to the latest stable 4.7.x release (4.7.8)
+- [SECURITY] Includes vendor security fix of moderate severity
+- `PMASA-2018-1 <https://www.phpmyadmin.net/security/PMASA-2018-1/>`_: Self XSS in central columns feature
+
 2018-01-01 Andreas Beutel - Version 5.2.1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Updated pMA to the latest stable 4.7.x release (4.7.7)
