@@ -11,6 +11,17 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2018-11-26 Andreas Beutel - Version 5.2.3
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [FEATURE] Updated pMA to the latest stable 4.8.x release (4.8.3)
+- [SECURITY] Includes critical vendor security fixes
+- `PMASA-2018-2 <https://www.phpmyadmin.net/security/PMASA-2018-2/>`_: CSRF vulnerability allowing arbitrary SQL execution
+- [SECURITY] Includes severe vendor security fixes
+- `PMASA-2018-4 <https://www.phpmyadmin.net/security/PMASA-2018-4/>`_: File inclusion and remote code execution attack
+- [SECURITY] Includes vendor security fix of moderate severity
+- `PMASA-2018-3 <https://www.phpmyadmin.net/security/PMASA-2018-3/>`_: XSS in Designer feature
+- `PMASA-2018-5 <https://www.phpmyadmin.net/security/PMASA-2018-5/>`_: XSS in the import dialog
+
 2018-02-25 Andreas Beutel - Version 5.2.2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Updated pMA to the latest stable 4.7.x release (4.7.8)

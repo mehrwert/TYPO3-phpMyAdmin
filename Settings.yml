@@ -6,8 +6,8 @@
 conf.py:
   copyright: 2002-2018
   project: phpMyAdmin Extension for TYPO3
-  version: 5.2.1
-  release: 5.2.1
+  version: 5.2.3
+  release: 5.2.3
   latex_documents:
   - - Index
     - phpmyadmin.tex
