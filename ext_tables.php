@@ -42,4 +42,4 @@ if (TYPO3_MODE == 'BE') {
 }
 
 // The subdirectory where the pMA source is located (used for cookie removal and script inclusion)
-$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-4.8.3-all-languages';
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-4.8.4-all-languages';
