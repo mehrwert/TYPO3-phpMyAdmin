@@ -15,10 +15,10 @@ The following is an overview of the changes in this extension. For more details 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Updated pMA to the latest stable 4.8.x release (4.8.4)
 - [SECURITY] Includes severe vendor security fixes
-- `PMASA-2018-4 <https://www.phpmyadmin.net/security/PMASA-2018-6/>`_: Local file inclusion through transformation feature
+- `PMASA-2018-6 <https://www.phpmyadmin.net/security/PMASA-2018-6/>`_: Local file inclusion through transformation feature
 - [SECURITY] Includes vendor security fix of moderate severity
-- `PMASA-2018-3 <https://www.phpmyadmin.net/security/PMASA-2018-5/>`_: XSS vulnerability in navigation tree
-- `PMASA-2018-5 <https://www.phpmyadmin.net/security/PMASA-2018-7/>`_: XSRF/CSRF vulnerability in phpMyAdmin
+- `PMASA-2018-8 <https://www.phpmyadmin.net/security/PMASA-2018-8/>`_: XSS vulnerability in navigation tree
+- `PMASA-2018-7 <https://www.phpmyadmin.net/security/PMASA-2018-7/>`_: XSRF/CSRF vulnerability in phpMyAdmin
 
 2018-11-26 Andreas Beutel - Version 5.2.3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
