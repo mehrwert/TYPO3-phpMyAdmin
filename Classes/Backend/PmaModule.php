@@ -67,7 +67,7 @@ class PmaModule
         $MCONF['name'] = 'tools_txphpmyadmin';
         $MCONF['script'] = '_DISPATCH';
         $MCONF['access'] = 'admin';
-        $MCONF['PMA_subdir'] = 'Vendor/phpMyAdmin-4.8.4-all-languages/';
+        $MCONF['PMA_subdir'] = 'Vendor/phpMyAdmin-4.8.5-all-languages/';
         $MCONF['PMA_script'] = 'index.php';
 
         $this->MCONF = $MCONF;
