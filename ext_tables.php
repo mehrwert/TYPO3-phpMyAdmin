@@ -35,11 +35,11 @@ if (TYPO3_MODE == 'BE') {
         ],
         [
             'access' => 'admin',
-            'icon' => 'EXT:phpmyadmin/Resources/Public/Icons/module-phpmyadmin.png',
+            'icon' => 'EXT:phpmyadmin/Resources/Public/Icons/module-phpmyadmin.svg',
             'labels' => 'LLL:EXT:phpmyadmin/Resources/Private/Language/locallang_mod.xlf',
         ]
     );
 }
 
 // The subdirectory where the pMA source is located (used for cookie removal and script inclusion)
-$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-4.8.4-all-languages';
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-4.8.5-all-languages';

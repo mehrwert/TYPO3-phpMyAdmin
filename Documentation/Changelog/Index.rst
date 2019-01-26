@@ -11,6 +11,14 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2019-01-26 Andreas Beutel - Version 5.2.5
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [FEATURE] Mark pMA compatible with TYPO3 9 LTS and PHP 7.2
+- [FEATURE] Updated pMA to the latest stable 4.8.x release (4.8.5)
+- [SECURITY] Includes serious vendor security fixes
+- `PMASA-2019-1 <https://www.phpmyadmin.net/security/PMASA-2019-1/>`_: Arbitrary file read vulnerability
+- `PMASA-2019-2 <https://www.phpmyadmin.net/security/PMASA-2019-2/>`_: SQL injection in Designer feature
+
 2018-12-11 Andreas Beutel - Version 5.2.4
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Updated pMA to the latest stable 4.8.x release (4.8.4)
