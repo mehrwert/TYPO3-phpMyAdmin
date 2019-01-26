@@ -11,6 +11,10 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2019-01-26 Andreas Beutel - Version 5.2.5
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [FEATURE] Mark pMA compatible with TYPO3 9 LTS and PHP 7.2
+
 2018-12-11 Andreas Beutel - Version 5.2.4
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Updated pMA to the latest stable 4.8.x release (4.8.4)
