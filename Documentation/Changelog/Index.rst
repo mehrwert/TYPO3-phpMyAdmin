@@ -11,6 +11,10 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2019-02-07 Andreas Beutel - Version 5.2.6
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [BUGFIX] Re-enable scrolling for pMA in TYPO3 Backend - #84529 (thanks to Renzo Bauen and Jürg Blaser for the contributions)
+
 2019-01-26 Andreas Beutel - Version 5.2.5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Mark pMA compatible with TYPO3 9 LTS and PHP 7.2

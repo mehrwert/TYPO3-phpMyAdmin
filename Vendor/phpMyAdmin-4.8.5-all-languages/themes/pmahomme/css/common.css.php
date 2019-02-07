@@ -42,6 +42,8 @@ body#loginform {
 
 #page_content {
     margin: 0 .5em;
+    max-height: calc(100vh - 75px);
+    overflow: auto;
 }
 
 .desktop50 {
