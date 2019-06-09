@@ -8,6 +8,14 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2019-06-09 Andreas Beutel - Version 5.3.0
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [CHANGE] Rename js/vendor/ to js/pma-vendor
+- [FEATURE] Updated pMA to the latest stable 4.9.x release (4.9.0.1)
+- [SECURITY] Includes serious vendor security fixes
+- `PMASA-2019-3 <https://www.phpmyadmin.net/security/PMASA-2019-3/>`_: SQL injection in Designer feature
+- `PMASA-2019-4 <https://www.phpmyadmin.net/security/PMASA-2019-4/>`_: CSRF vulnerability in login form
+
 2019-06-07 Andreas Beutel - Version 5.2.7
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [CHANGE] Update documentation for new rendering process
