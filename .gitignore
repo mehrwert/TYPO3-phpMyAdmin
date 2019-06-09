@@ -2,3 +2,4 @@
 /atlassian-ide-plugin.xml
 Build
 /Vendor/*/tmp/
+*GENERATED*

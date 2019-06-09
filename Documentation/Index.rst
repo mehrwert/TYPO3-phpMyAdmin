@@ -1,21 +1,8 @@
-﻿
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
+﻿.. include:: Includes.txt
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
-
-====================
-phpMyAdmin for TYPO3
-====================
+==============================
+phpMyAdmin Extension for TYPO3
+==============================
 
 :Author:
       mehrwert intermediale kommunikation GmbH
@@ -24,7 +11,7 @@ phpMyAdmin for TYPO3
       2002-11-01
 
 :Changed:
-      2019-02-07
+      2019-06-09
 
 :Changed by:
       Andreas Beutel

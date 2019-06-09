@@ -1,7 +1,4 @@
-﻿.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
+﻿.. include:: ../Includes.txt
 
 .. _changelog:
 
@@ -10,6 +7,10 @@ Change Log
 ==========
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
+
+2019-06-07 Andreas Beutel - Version 5.2.7
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [CHANGE] Update documentation for new rendering process
 
 2019-02-07 Andreas Beutel - Version 5.2.6
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
