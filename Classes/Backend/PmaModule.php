@@ -17,6 +17,8 @@ namespace mehrwert\Phpmyadmin\Backend;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\HttpUtility;
+use TYPO3\CMS\Core\Utility\PathUtility;
+use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 
 /**
  * Utilities for the phpMyAdmin third party database administration Tool
@@ -111,8 +113,11 @@ class PmaModule
         @set_include_path($this->MCONF['PMA_absolute_path'] . PATH_SEPARATOR . get_include_path());
 
         // Path to web dir
-        $this->MCONF['PMA_relative_path'] = ExtensionManagementUtility::siteRelPath('phpmyadmin') . $this->MCONF['PMA_subdir'];
-
+        if (VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version) >= 9000000) {
+            $this->MCONF['PMA_relative_path'] = PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath('phpmyadmin')) . $this->MCONF['PMA_subdir'];
+        } else {
+            $this->MCONF['PMA_relative_path'] = ExtensionManagementUtility::siteRelPath('phpmyadmin') . $this->MCONF['PMA_subdir'];
+        }
         // If phpMyAdmin is configured in the conf.php script, we continue to load it...
         if ($this->MCONF['PMA_absolute_path'] && @is_dir($this->MCONF['PMA_absolute_path'])) {
 

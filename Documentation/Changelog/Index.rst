@@ -8,6 +8,10 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2019-08-03 Andreas Beutel - Version 5.4.0
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [FEATURE] Mark pMA compatible with TYPO3 10.x
+
 2019-06-09 Andreas Beutel - Version 5.3.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [CHANGE] Rename js/vendor/ to js/pma-vendor
