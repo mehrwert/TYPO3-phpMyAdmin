@@ -8,6 +8,13 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2020-02-08 Andreas Beutel - Version 5.5.0
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [FEATURE] Updated pMA to the latest stable 4.9.x release (4.9.4)
+- [SECURITY] Includes serious vendor security fix
+- `PMASA-2020-1 <https://www.phpmyadmin.net/security/PMASA-2020-1/>`_: SQL injection in user accounts page
+
+
 2019-08-03 Andreas Beutel - Version 5.4.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Mark pMA compatible with TYPO3 10.x
