@@ -24,8 +24,5 @@
     "psr-4": {
       "mehrwert\\Phpmyadmin\\": "Classes"
     }
-  },
-  "replace": {
-    "phpmyadmin": "*"
   }
 }
