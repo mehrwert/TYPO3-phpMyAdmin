@@ -1,5 +1,5 @@
 <?php
-namespace mehrwert\Phpmyadmin\Hooks;
+namespace Mehrwert\Phpmyadmin\Hooks;
 
 /*
  * This file is part of the TYPO3 CMS project.

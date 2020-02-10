@@ -20,5 +20,5 @@ if (!defined('TYPO3_MODE')) {
 // Do not load post processing class if TYPO3 is in CLI mode
 if (!defined('TYPO3_cliMode') || TYPO3_cliMode !== true) {
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_userauth.php']['logoff_post_processing'][] =
-        'mehrwert\\Phpmyadmin\\Hooks\\BeUserAuthLogOffHook->pmaLogOff';
+        'Mehrwert\\Phpmyadmin\\Hooks\\BeUserAuthLogOffHook->pmaLogOff';
 }
