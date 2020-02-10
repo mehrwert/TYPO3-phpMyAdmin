@@ -8,12 +8,17 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2020-02-10 Andreas Beutel - Version 5.6.0
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [BUGFIX] Vendor name must begin with Capital letter - GH#37 (thanks to ashupatel1990 for reporting this)
+- [TASK] Update release notes of 5.5.0 release to include reference to PMASA-2019-5 fixed in 4.9.2
+
 2020-02-08 Andreas Beutel - Version 5.5.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Updated pMA to the latest stable 4.9.x release (4.9.4)
 - [SECURITY] Includes serious vendor security fix
 - `PMASA-2020-1 <https://www.phpmyadmin.net/security/PMASA-2020-1/>`_: SQL injection in user accounts page
-
+- `PMASA-2019-5 <https://www.phpmyadmin.net/security/PMASA-2019-5/>`_: SQL injection in Designer feature
 
 2019-08-03 Andreas Beutel - Version 5.4.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

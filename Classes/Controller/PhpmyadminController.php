@@ -1,5 +1,5 @@
 <?php
-namespace mehrwert\Phpmyadmin\Controller;
+namespace Mehrwert\Phpmyadmin\Controller;
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -27,6 +27,6 @@ class PhpmyadminController extends ActionController
      */
     public function indexAction()
     {
-        return GeneralUtility::makeInstance(\mehrwert\Phpmyadmin\Backend\PmaModule::class);
+        return GeneralUtility::makeInstance(\Mehrwert\Phpmyadmin\Backend\PmaModule::class);
     }
 }

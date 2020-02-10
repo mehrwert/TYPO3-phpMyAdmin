@@ -1,5 +1,5 @@
 <?php
-namespace mehrwert\Phpmyadmin\Backend;
+namespace Mehrwert\Phpmyadmin\Backend;
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -75,7 +75,10 @@ class PmaModule
         $this->MCONF = $MCONF;
 
         // Get config
-        $extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin']);
+        $extensionConfiguration = unserialize(
+            $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin'],
+            ['allowed_classes' => false]
+        );
 
         // IP-based Access restrictions
         $devIPmask = trim($GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask']);
