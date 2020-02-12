@@ -8,6 +8,10 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2020-02-12 Andreas Beutel - Version 5.6.1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [BUGFIX] Use proper Uppercase Vendor name for registerModule()
+
 2020-02-10 Andreas Beutel - Version 5.6.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [BUGFIX] Vendor name must begin with Capital letter - GH#37 (thanks to ashupatel1990 for reporting this)

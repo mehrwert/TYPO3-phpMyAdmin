@@ -26,7 +26,7 @@ $showPhpMyAdminInWebModule = (boolean)$extensionConfiguration['showPhpMyAdminInW
 // If the backend is loaded, add the module
 if (TYPO3_MODE == 'BE') {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
-        'mehrwert.Phpmyadmin',
+        'Mehrwert.Phpmyadmin',
         'tools', // Make module a submodule of 'tools'
         'phpmyadmin_mod1', // Submodule key
         '', // Position
