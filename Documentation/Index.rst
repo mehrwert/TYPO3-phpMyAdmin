@@ -11,7 +11,7 @@ phpMyAdmin Extension for TYPO3
       2002-11-01
 
 :Changed:
-      2020-02-08
+      2020-03-23
 
 :Changed by:
       Andreas Beutel

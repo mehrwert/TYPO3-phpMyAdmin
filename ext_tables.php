@@ -18,7 +18,10 @@ if (!defined('TYPO3_MODE')) {
 }
 
 // Get config
-$extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin']);
+$extensionConfiguration = unserialize(
+    $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin'],
+    ['allowed_classes' => false]
+);
 
 // Check for IP restriction (devIpMask), and die if not allowed
 $showPhpMyAdminInWebModule = (boolean)$extensionConfiguration['showPhpMyAdminInWebModule'];
@@ -42,4 +45,4 @@ if (TYPO3_MODE == 'BE') {
 }
 
 // The subdirectory where the pMA source is located (used for cookie removal and script inclusion)
-$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-4.9.4-all-languages';
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['phpmyadmin']['pmaDirname'] = 'phpMyAdmin-4.9.5-all-languages';

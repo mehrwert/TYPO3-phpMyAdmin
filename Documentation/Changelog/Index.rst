@@ -8,6 +8,14 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2020-03-23 Andreas Beutel - Version 5.6.2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [FEATURE] Updated pMA to the latest stable 4.9.x release (4.9.5)
+- [SECURITY] Includes moderate vendor security fixes
+- `PMASA-2020-4 <https://www.phpmyadmin.net/security/PMASA-2020-4/>`_: SQL injection relating to data display
+- `PMASA-2020-3 <https://www.phpmyadmin.net/security/PMASA-2020-3/>`_: SQL injection relating to searching
+- `PMASA-2020-2 <https://www.phpmyadmin.net/security/PMASA-2020-2/>`_: SQL injection with processing username
+
 2020-02-12 Andreas Beutel - Version 5.6.1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [BUGFIX] Use proper Uppercase Vendor name for registerModule()
