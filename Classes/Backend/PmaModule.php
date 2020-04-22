@@ -19,6 +19,7 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\HttpUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Core\Utility\VersionNumberUtility;
+use TYPO3\CMS\Core\Core\Environment;
 
 /**
  * Utilities for the phpMyAdmin third party database administration Tool
@@ -157,7 +158,7 @@ class PmaModule
 
             // Try to get the TYPO3 backend uri even if it's installed in a subdirectory
             // Compile logout path and add a slash if the returned string does not start with
-            $path_typo3 = substr(PATH_typo3, strlen($typo3DocumentRoot), strlen(PATH_typo3));
+            $path_typo3 = substr(Environment::getPublicPath(), strlen($typo3DocumentRoot), strlen(Environment::getPublicPath()));
             $path_typo3 = (substr($path_typo3, 0, 1) != '/' ? '/' . $path_typo3 : $path_typo3);
             $_SESSION['PMA_LogoutURL'] = $path_typo3 . 'logout.php';
 
