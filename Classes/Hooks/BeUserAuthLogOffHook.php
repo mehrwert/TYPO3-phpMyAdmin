@@ -15,6 +15,7 @@ namespace Mehrwert\Phpmyadmin\Hooks;
  */
 
 use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use \TYPO3\CMS\Core\Core\Environment;
 
 /**
  * Utilities for the phpMyAdmin third party database Administration Tool
@@ -71,7 +72,7 @@ class BeUserAuthLogOffHook
             session_start();
 
             // Try to get the TYPO3 backend uri even if it's installed in a subdirectory
-            $path_typo3 = substr(PATH_typo3, strlen($_SERVER['DOCUMENT_ROOT']), strlen(PATH_typo3));
+            $path_typo3 = substr(Environment::getPublicPath(), strlen($_SERVER['DOCUMENT_ROOT']), strlen(Environment::getPublicPath()));
             $path_typo3 = (substr($path_typo3, 0, 1) != '/' ? '/' . $path_typo3 : $path_typo3);
 
             $_SESSION['PMA_LogoutURL'] = $path_typo3 . 'logout.php';
