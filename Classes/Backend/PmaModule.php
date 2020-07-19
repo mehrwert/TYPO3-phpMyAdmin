@@ -15,8 +15,8 @@ namespace Mehrwert\Phpmyadmin\Backend;
  */
 
 use Mehrwert\Phpmyadmin\Utility\EnvironmentUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\HttpUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Core\Utility\VersionNumberUtility;
@@ -24,18 +24,15 @@ use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 /**
  * Utilities for the phpMyAdmin third party database administration Tool
  *
- * @package        TYPO3
- * @subpackage    tx_phpmyadmin
  * @author        mehrwert <typo3@mehrwert.de>
  * @author        Kasper Skårhøj <kasperYYYY@typo3.com>
  * @license        GPL
  */
 class PmaModule
 {
-
     /**
      * Configuration for the module
-     * @var    array $MCONF
+     * @var    array
      */
     public $MCONF = [];
 
@@ -53,8 +50,6 @@ class PmaModule
 
     /**
      * The main method of the backend module
-     *
-     * @return    void
      */
     public function main()
     {
@@ -91,8 +86,11 @@ class PmaModule
             // Abort if devIPmask is wildcarded
             if ($devIPmask != '*') {
                 $message = '<h1>' . $GLOBALS['LANG']->getLL('module.headline.accessDenied') . '</h1>
-                            <p>' . sprintf($GLOBALS['LANG']->getLL('module.message.accessDenied.devIpMask'),
-                        $remoteAddress, $devIPmask) . '</p>';
+                            <p>' . sprintf(
+                    $GLOBALS['LANG']->getLL('module.message.accessDenied.devIpMask'),
+                    $remoteAddress,
+                    $devIPmask
+                ) . '</p>';
                 if (!GeneralUtility::cmpIP($remoteAddress, $devIPmask)) {
                     die($message);
                 }
@@ -103,8 +101,11 @@ class PmaModule
         $allowedIps = trim($extensionConfiguration['allowedIps']);
         if (!empty($allowedIps)) {
             $message = '<h1>' . $GLOBALS['LANG']->getLL('module.headline.accessDenied') . '</h1>
-                        <p>' . sprintf($GLOBALS['LANG']->getLL('module.message.accessDenied.allowedIps'),
-                    $remoteAddress, $allowedIps) . '</p>';
+                        <p>' . sprintf(
+                $GLOBALS['LANG']->getLL('module.message.accessDenied.allowedIps'),
+                $remoteAddress,
+                $allowedIps
+            ) . '</p>';
             if (!GeneralUtility::cmpIP($remoteAddress, $allowedIps)) {
                 die($message);
             }
@@ -193,7 +194,7 @@ class PmaModule
                 'nl' => 'nl',
                 'cz' => 'cs-iso',
                 'pl' => 'pl',
-                'si' => 'sk'
+                'si' => 'sk',
             ];
             $languageKey = $languageKeyMapping[$GLOBALS['LANG']->lang];
             if (!$languageKey) {
@@ -209,7 +210,7 @@ class PmaModule
             $headers = [
                 'Expires: Mon, 26 Jul 1997 05:00:00 GMT',
                 'Pragma: no-cache',
-                'Cache-Control: private'
+                'Cache-Control: private',
             ];
             // Send all headers
             foreach ($headers as $header) {
@@ -220,15 +221,16 @@ class PmaModule
                 $redirectUri,
                 HttpUtility::HTTP_STATUS_302
             );
-
         } else {
             // Render body
             $this->doc = GeneralUtility::makeInstance('TYPO3\CMS\Backend\Template\DocumentTemplate');
             $this->content = $this->doc->startPage($GLOBALS['LANG']->getLL('module.title'));
             $this->content .= '<h1>' . $GLOBALS['LANG']->getLL('module.headline.error') . '</h1>';
             // No configuration set
-            $this->content .= '<p>' . sprintf($GLOBALS['LANG']->getLL('module.error.invalidConfiguration'),
-                    $this->MCONF['PMA_subdir']) . '</p>';
+            $this->content .= '<p>' . sprintf(
+                $GLOBALS['LANG']->getLL('module.error.invalidConfiguration'),
+                $this->MCONF['PMA_subdir']
+            ) . '</p>';
             // End document
             $this->content .= $this->doc->endPage();
         }
@@ -236,8 +238,6 @@ class PmaModule
 
     /**
      * Prints the content of the module directly to the browser
-     *
-     * @return    void
      */
     public function printContent()
     {
@@ -247,8 +247,8 @@ class PmaModule
 
 // Proceed if TYPO3_MODE is defined
 if (!defined('TYPO3_MODE')) {
-    die ('<h1>Error</h1><p>Unable to determine TYPO3_MODE.</p>');
-} else {
+    die('<h1>Error</h1><p>Unable to determine TYPO3_MODE.</p>');
+}
 
     // Proceed if BE loaded
     if (TYPO3_MODE === 'BE') {
@@ -256,8 +256,6 @@ if (!defined('TYPO3_MODE')) {
         $GLOBALS['SOBE'] = GeneralUtility::makeInstance(PmaModule::class);
         $GLOBALS['SOBE']->main();
         $GLOBALS['SOBE']->printContent();
-
     } else {
-        die ('<h1>Error</h1><p>The TYPO3 Backend is required for phpMyAdmin module but was not loaded.</p>');
+        die('<h1>Error</h1><p>The TYPO3 Backend is required for phpMyAdmin module but was not loaded.</p>');
     }
-}

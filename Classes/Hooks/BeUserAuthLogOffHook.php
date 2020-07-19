@@ -15,30 +15,25 @@ namespace Mehrwert\Phpmyadmin\Hooks;
  */
 
 use Mehrwert\Phpmyadmin\Utility\EnvironmentUtility;
-use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 /**
  * Utilities for the phpMyAdmin third party database Administration Tool
  *
- * @package        TYPO3
- * @subpackage    tx_phpmyadmin
  * @author        mehrwert <typo3@mehrwert.de>
  * @license        GPL
  */
 class BeUserAuthLogOffHook
 {
-
     /**
      * Log off method for the signon-based phpMyAdmin extension. Called as post processing
      * hook in t3lib_userauth.php. Deletes the signon cookies
      *
      * @param array $params Additional params passed to the method
      * @param \TYPO3\CMS\Core\Authentication\AbstractUserAuthentication $ref The parent object (BE User Auth)
-     * @return void
      */
-    public function pmaLogOff($params = array(), $ref = null)
+    public function pmaLogOff($params = [], $ref = null)
     {
-
         if (isset($GLOBALS['PHP_UNIT_TEST_RUNNING']) === false) {
             // Define the cookie path
             $cookiePath = substr(

@@ -17,14 +17,11 @@ namespace Mehrwert\Phpmyadmin\Utility;
 /**
  * Utilities for the phpMyAdmin third party database Administration Tool
  *
- * @package        TYPO3
- * @subpackage    tx_phpmyadmin
  * @author        mehrwert <typo3@mehrwert.de>
  * @license        GPL
  */
 class EnvironmentUtility
 {
-
     /**
      * The TYPO3 public web folder
      *

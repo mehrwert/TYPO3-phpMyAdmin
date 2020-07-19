@@ -8,6 +8,10 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2020-07-19 Andreas Beutel - Version 5.6.3
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [BUGFIX] Resolve dropped PATH_typo3 for TYPO3 10.x - GH #44 (thanks to Alexander Nitsche for the contribution)
+
 2020-03-23 Andreas Beutel - Version 5.6.2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Updated pMA to the latest stable 4.9.x release (4.9.5)

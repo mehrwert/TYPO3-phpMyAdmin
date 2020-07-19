@@ -5,7 +5,7 @@ $EM_CONF[$_EXTKEY] = [
     'description' => 'Third party \'phpMyAdmin\' administration module. Access to admin-users only.',
     'category' => 'module',
     'shy' => 0,
-    'version' => '5.6.2',
+    'version' => '5.6.3',
     'dependencies' => '',
     'conflicts' => '',
     'priority' => '',
@@ -26,7 +26,7 @@ $EM_CONF[$_EXTKEY] = [
     'constraints' => [
         'depends' => [
             'php' => '7.0.0-7.3.99',
-            'typo3' => '8.7.0-10.99.99'
+            'typo3' => '8.7.0-10.4.99'
         ]
     ]
 ];
