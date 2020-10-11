@@ -96,7 +96,7 @@ $cfg['Servers'][$i]['LogoutURL'] = $extensionConfiguration['PMA_LogoutURL'];
 
 // Currently broken in pMA
 $cfg['Servers'][$i]['only_db'] = ( $extensionConfiguration['PMA_hideOtherDBs'] === 1 ?
-    [$extensionConfiguration['PMA_typo3_db']] : [$extensionConfiguration['PMA_typo3_db'], '*'] );
+    [$extensionConfiguration['PMA_typo3_db']] : [$extensionConfiguration['PMA_typo3_db'], '%'] );
 
 // General configuration
 $cfg['ThemeDefault'] = 'pmahomme';
