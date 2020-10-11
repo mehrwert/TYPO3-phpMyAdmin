@@ -8,17 +8,25 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2020-10-10 Andreas Beutel - Version 5.6.4
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [TASK] Update pMA to the latest stable 4.9.x release (4.9.6)
+- [SECURITY] Includes moderate vendor security fixes
+- `PMASA-2020-5 <https://www.phpmyadmin.net/security/PMASA-2020-5/>`_: XSS relating to the transformation feature
+- `PMASA-2020-6 <https://www.phpmyadmin.net/security/PMASA-2020-6/>`_: SQL injection vulnerability in SearchController
+- [BUGFIX] Show all available databases in left panel - GH #45 (thanks to Michael Schams for the contribution)
+
 2020-07-19 Andreas Beutel - Version 5.6.3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [BUGFIX] Resolve dropped PATH_typo3 for TYPO3 10.x - GH #44 (thanks to Alexander Nitsche for the contribution)
 
 2020-03-23 Andreas Beutel - Version 5.6.2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.9.x release (4.9.5)
+- [TASK] Update pMA to the latest stable 4.9.x release (4.9.5)
 - [SECURITY] Includes moderate vendor security fixes
-- `PMASA-2020-4 <https://www.phpmyadmin.net/security/PMASA-2020-4/>`_: SQL injection relating to data display
-- `PMASA-2020-3 <https://www.phpmyadmin.net/security/PMASA-2020-3/>`_: SQL injection relating to searching
 - `PMASA-2020-2 <https://www.phpmyadmin.net/security/PMASA-2020-2/>`_: SQL injection with processing username
+- `PMASA-2020-3 <https://www.phpmyadmin.net/security/PMASA-2020-3/>`_: SQL injection relating to searching
+- `PMASA-2020-4 <https://www.phpmyadmin.net/security/PMASA-2020-4/>`_: SQL injection relating to data display
 
 2020-02-12 Andreas Beutel - Version 5.6.1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -31,7 +39,7 @@ The following is an overview of the changes in this extension. For more details 
 
 2020-02-08 Andreas Beutel - Version 5.5.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.9.x release (4.9.4)
+- [TASK] Update pMA to the latest stable 4.9.x release (4.9.4)
 - [SECURITY] Includes serious vendor security fix
 - `PMASA-2020-1 <https://www.phpmyadmin.net/security/PMASA-2020-1/>`_: SQL injection in user accounts page
 - `PMASA-2019-5 <https://www.phpmyadmin.net/security/PMASA-2019-5/>`_: SQL injection in Designer feature
@@ -43,7 +51,7 @@ The following is an overview of the changes in this extension. For more details 
 2019-06-09 Andreas Beutel - Version 5.3.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [CHANGE] Rename js/vendor/ to js/pma-vendor
-- [FEATURE] Updated pMA to the latest stable 4.9.x release (4.9.0.1)
+- [TASK] Update pMA to the latest stable 4.9.x release (4.9.0.1)
 - [SECURITY] Includes serious vendor security fixes
 - `PMASA-2019-3 <https://www.phpmyadmin.net/security/PMASA-2019-3/>`_: SQL injection in Designer feature
 - `PMASA-2019-4 <https://www.phpmyadmin.net/security/PMASA-2019-4/>`_: CSRF vulnerability in login form
@@ -59,14 +67,14 @@ The following is an overview of the changes in this extension. For more details 
 2019-01-26 Andreas Beutel - Version 5.2.5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Mark pMA compatible with TYPO3 9 LTS and PHP 7.2
-- [FEATURE] Updated pMA to the latest stable 4.8.x release (4.8.5)
+- [TASK] Update pMA to the latest stable 4.8.x release (4.8.5)
 - [SECURITY] Includes serious vendor security fixes
 - `PMASA-2019-1 <https://www.phpmyadmin.net/security/PMASA-2019-1/>`_: Arbitrary file read vulnerability
 - `PMASA-2019-2 <https://www.phpmyadmin.net/security/PMASA-2019-2/>`_: SQL injection in Designer feature
 
 2018-12-11 Andreas Beutel - Version 5.2.4
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.8.x release (4.8.4)
+- [TASK] Update pMA to the latest stable 4.8.x release (4.8.4)
 - [SECURITY] Includes severe vendor security fixes
 - `PMASA-2018-6 <https://www.phpmyadmin.net/security/PMASA-2018-6/>`_: Local file inclusion through transformation feature
 - [SECURITY] Includes vendor security fix of moderate severity
@@ -75,7 +83,7 @@ The following is an overview of the changes in this extension. For more details 
 
 2018-11-26 Andreas Beutel - Version 5.2.3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.8.x release (4.8.3)
+- [TASK] Update pMA to the latest stable 4.8.x release (4.8.3)
 - [SECURITY] Includes critical vendor security fixes
 - `PMASA-2018-2 <https://www.phpmyadmin.net/security/PMASA-2018-2/>`_: CSRF vulnerability allowing arbitrary SQL execution
 - [SECURITY] Includes severe vendor security fixes
@@ -86,13 +94,13 @@ The following is an overview of the changes in this extension. For more details 
 
 2018-02-25 Andreas Beutel - Version 5.2.2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.7.x release (4.7.8)
+- [TASK] Update pMA to the latest stable 4.7.x release (4.7.8)
 - [SECURITY] Includes vendor security fix of moderate severity
 - `PMASA-2018-1 <https://www.phpmyadmin.net/security/PMASA-2018-1/>`_: Self XSS in central columns feature
 
 2018-01-01 Andreas Beutel - Version 5.2.1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.7.x release (4.7.7)
+- [TASK] Update pMA to the latest stable 4.7.x release (4.7.7)
 - [SECURITY] Includes critical vendor security fixes
 - `PMASA-2017-9 <https://www.phpmyadmin.net/security/PMASA-2017-9/>`_: XSRF/CSRF vulnerability in phpMyAdmin
 - [SECURITY] Includes non-critical vendor security fixes
@@ -101,11 +109,11 @@ The following is an overview of the changes in this extension. For more details 
 2017-07-21 Andreas Beutel - Version 5.2.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [!!!][TASK] Refactor BE Module for TYPO3 8.x compatibility (thanks to Sven Juergens for the contribution)
-- [FEATURE] Updated pMA to the latest stable 4.7.x release (4.7.3)
+- [TASK] Update pMA to the latest stable 4.7.x release (4.7.3)
 
 2017-01-31 Andreas Beutel - Version 5.1.9
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.10)
+- [TASK] Update pMA to the latest stable 4.4.x release (4.4.15.10)
 - [SECURITY] Includes non-critical vendor security fixes
 - `PMASA-2017-7 <https://www.phpmyadmin.net/security/PMASA-2017-7/>`_: DOS in replication status
 - `PMASA-2017-6 <https://www.phpmyadmin.net/security/PMASA-2017-6/>`_: SSRF in replication
@@ -118,7 +126,7 @@ The following is an overview of the changes in this extension. For more details 
 
 2016-11-30 Andreas Beutel - Version 5.1.8
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.9)
+- [TASK] Update pMA to the latest stable 4.4.x release (4.4.15.9)
 - [SECURITY] Includes vendor security fixes
 - `PMASA-2016-58 <https://www.phpmyadmin.net/security/PMASA-2016-58/>`_: Unsafe generation of $cfg['blowfish_secret']
 - `PMASA-2016-59 <https://www.phpmyadmin.net/security/PMASA-2016-59/>`_: phpMyAdmin's phpinfo functionality is removed
@@ -135,7 +143,7 @@ The following is an overview of the changes in this extension. For more details 
 
 2016-08-17 Andreas Beutel - Version 5.1.7
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.8)
+- [TASK] Update pMA to the latest stable 4.4.x release (4.4.15.8)
 - [SECURITY] Includes critical vendor security fixes
 - `PMASA-2016-56 <https://www.phpmyadmin.net/security/PMASA-2016-56/>`_: Remote code execution vulnerability when PHP is running with dbase extension
 - `PMASA-2016-54 <https://www.phpmyadmin.net/security/PMASA-2016-54/>`_: Remote code execution vulnerability when run as CGI
@@ -176,7 +184,7 @@ The following is an overview of the changes in this extension. For more details 
 
 2016-05-27 Andreas Beutel - Version 5.1.6
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.6)
+- [TASK] Update pMA to the latest stable 4.4.x release (4.4.15.6)
 - [SECURITY] Includes non-critical vendor security fixes
 - `PMASA-2016-11 <https://www.phpmyadmin.net/security/PMASA-2016-11/>`_: Multiple XSS vulnerabilities
 - `PMASA-2016-12 <https://www.phpmyadmin.net/security/PMASA-2016-12/>`_: Multiple XSS vulnerabilities
@@ -184,7 +192,7 @@ The following is an overview of the changes in this extension. For more details 
 
 2016-01-28 Andreas Beutel - Version 5.1.5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.3)
+- [TASK] Update pMA to the latest stable 4.4.x release (4.4.15.3)
 - [SECURITY] Includes critical vendor security fixes
 - `PMASA-2016-5 <https://www.phpmyadmin.net/security/PMASA-2016-5/>`_: Unsafe comparison of XSRF/CSRF token
 - [SECURITY] Includes non-critical vendor security fixes
@@ -203,25 +211,25 @@ The following is an overview of the changes in this extension. For more details 
 
 2015-10-31 Andreas Beutel - Version 5.1.3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15.1)
+- [TASK] Update pMA to the latest stable 4.4.x release (4.4.15.1)
 - [CHANGE] Set TYPO3 compatibility for 6.2 to 7.6
 - [SECURITY] Includes a vendor security fix
 - `PMASA-2015-5 <https://www.phpmyadmin.net/security/PMASA-2015-5/>`_: Content spoofing vulnerability when redirecting user to an external site
 
 2015-09-29 Andreas Beutel - Version 5.1.2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.15)
+- [TASK] Update pMA to the latest stable 4.4.x release (4.4.15)
 - [CHANGE] Set TYPO3 compatibility for 6.2 to 7.5
 
 2015-08-24 Andreas Beutel - Version 5.1.1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [BUGFIX] Fix wrong module path in config.inc.php - #69298
 - [CHANGE] Rename variable keys from typo_ to typo3_
-- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.14)
+- [TASK] Update pMA to the latest stable 4.4.x release (4.4.14)
 
 2015-08-10 Andreas Beutel - Version 5.1.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.13.1)
+- [TASK] Update pMA to the latest stable 4.4.x release (4.4.13.1)
 - [CHANGE] Set TYPO3 compatibility for 6.2 to 7.4
 
 2015-07-13 Andreas Beutel - Version 5.0.1
@@ -232,11 +240,11 @@ The following is an overview of the changes in this extension. For more details 
 2015-07-12 Andreas Beutel - Version 5.0.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [FEATURE] Release of version 5.0.0 stable
-- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.11)
+- [TASK] Update pMA to the latest stable 4.4.x release (4.4.11)
 
 2015-06-20 Andreas Beutel - Version 5.0.0-dev
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.10)
+- [TASK] Update pMA to the latest stable 4.4.x release (4.4.10)
 - [CHANGE] Set TYPO3 compatibility for 6.2 to 7.3
 - [!!!][CHANGE] Switch to mysqli for database connection
 - [CHANGE] Drop unsupported configuration pMA directives
@@ -250,7 +258,7 @@ The following is an overview of the changes in this extension. For more details 
 
 2015-05-25 Andreas Beutel - Version 5.0.0-dev
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.4.x release (4.4.7)
+- [TASK] Update pMA to the latest stable 4.4.x release (4.4.7)
 - [CHANGE] Set TYPO3 compatibility for 6.2 to 7.2
 
 2015-05-26 Andreas Beutel - Version 4.19.1
@@ -259,7 +267,7 @@ The following is an overview of the changes in this extension. For more details 
 
 2015-05-23 Andreas Beutel - Version 4.19.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.0.x release (4.0.10.10)
+- [TASK] Update pMA to the latest stable 4.0.x release (4.0.10.10)
 - [SECURITY] Includes several security fixes
 - `PMASA-2015-3 <http://www.phpmyadmin.net/home_page/security/PMASA-2015-3.php>`_: Vulnerability allowing man-in-the-middle attack on API call to GitHub.
 - `PMASA-2015-2 <http://www.phpmyadmin.net/home_page/security/PMASA-2015-1.php>`_: XSRF/CSRF vulnerability in phpMyAdmin setup.
@@ -270,7 +278,7 @@ The following is an overview of the changes in this extension. For more details 
 
 2014-12-05 Andreas Beutel - Version 4.18.5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.0.x release (4.0.10.5)
+- [TASK] Update pMA to the latest stable 4.0.x release (4.0.10.5)
 - [SECURITY] Includes several security fixes
 - `PMASA-2014-13 <http://www.phpmyadmin.net/home_page/security/PMASA-2014-13.php>`_: Multiple XSS vulnerabilities.
 - `PMASA-2014-14 <http://www.phpmyadmin.net/home_page/security/PMASA-2014-14.php>`_: Local file inclusion vulnerability.
@@ -278,21 +286,21 @@ The following is an overview of the changes in this extension. For more details 
 
 2014-11-01 Andreas Beutel - Version 4.18.4
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.0.x release (4.0.10.5)
+- [TASK] Update pMA to the latest stable 4.0.x release (4.0.10.5)
 - [SECURITY] Includes several security fixes
 - `PMASA-2014-11 <http://www.phpmyadmin.net/home_page/security/PMASA-2014-11.php>`_: XSS vulnerabilities in table search and table structure pages.
 - `PMASA-2014-12 <http://www.phpmyadmin.net/home_page/security/PMASA-2014-12.php>`_: XSS vulnerabilities in SQL debug output and server monitor page.
 
 2014-09-25 Andreas Beutel - Version 4.18.3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.0.x release (4.0.10.3)
+- [TASK] Update pMA to the latest stable 4.0.x release (4.0.10.3)
 - [SECURITY] Includes several security fixes
 - `PMASA-2014-10 <http://www.phpmyadmin.net/home_page/security/PMASA-2014-10.php>`_: XSRF/CSRF due to DOM based XSS in the micro history feature
 - `PMASA-2014-8 <http://www.phpmyadmin.net/home_page/security/PMASA-2014-8.php>`_: Multiple XSS vulnerabilities in browse table, ENUM editor, monitor, query charts and table relations pages
 
 2014-07-20 Andreas Beutel - Version 4.18.2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable 4.0.x release (4.0.10.1)
+- [TASK] Update pMA to the latest stable 4.0.x release (4.0.10.1)
 - [SECURITY] Includes non-critical security fixes
 - `PMASA-2014-5 <http://www.phpmyadmin.net/home_page/security/PMASA-2014-5.php>`_: Self-XSS due to unescaped HTML output in database triggers page.
 - `PMASA-2014-6 <http://www.phpmyadmin.net/home_page/security/PMASA-2014-6.php>`_: Multiple XSS in AJAX confirmation messages.
@@ -305,7 +313,7 @@ The following is an overview of the changes in this extension. For more details 
 2014-01-31 Andreas Beutel - Version 4.18.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [CHANGE] Set TYPO3 6.1 compatibility
-- [FEATURE] Updated pMA to the stable release (4.0.10)
+- [TASK] Update pMA to the stable release (4.0.10)
 
 2013-09-01 Andreas Beutel - Version 4.17.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -313,7 +321,7 @@ The following is an overview of the changes in this extension. For more details 
 
 2013-07-29 Andreas Beutel - Version 4.16.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.5.8.2)
+- [TASK] Update pMA to the latest stable release (3.5.8.2)
 - [SECURITY] Includes several security fixes
 - `PMASA-2013-15 <http://www.phpmyadmin.net/home_page/security/PMASA-2013-15.php>`_: SQL injection vulnerabilities, producing a privilege escalation (control user).
 - `PMASA-2013-14 <http://www.phpmyadmin.net/home_page/security/PMASA-2013-14.php>`_: Self-XSS due to unescaped HTML output in schema export.
@@ -328,12 +336,12 @@ The following is an overview of the changes in this extension. For more details 
 2012-11-28 Andreas Beutel - Version 4.15.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [CHANGE] Set TYPO3 6.0 compatibility
-- [FEATURE] Updated pMA to the latest stable release (3.5.4)
+- [TASK] Update pMA to the latest stable release (3.5.4)
 - [BUGFIX] #42517: Typo3 6.0 - 'backend required' error
 
 2012-08-13 Andreas Beutel - Version 4.14.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.5.2.2)
+- [TASK] Update pMA to the latest stable release (3.5.2.2)
 - [BUGFIX] #18560: Every first BE-Login fails (thanks to Markus Kappe for a patch and the others for testing)
 - [SECURITY] Includes non-critical security fixes
 - `PMASA-2012-3 <http://www.phpmyadmin.net/home_page/security/PMASA-2012-3.php>`_: Path disclosure due to missing library.
@@ -341,52 +349,52 @@ The following is an overview of the changes in this extension. For more details 
 
 2012-03-31 Andreas Beutel - Version 4.13.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.4.10.2)
+- [TASK] Update pMA to the latest stable release (3.4.10.2)
 - [BUGFIX] #18245: phpmyadmin 4.11.3 - Error on first Access after login (thanks to Jerome Schneider for the patch!)
 
 2012-02-14 Andreas Beutel - Version 4.12.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.4.10)
+- [TASK] Update pMA to the latest stable release (3.4.10)
 
 2011-12-22 Andreas Beutel - Version 4.11.10
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.4.9)
+- [TASK] Update pMA to the latest stable release (3.4.9)
 - [SECURITY] Non-critical security fixes
 - `PMASA-2011-20 <http://www.phpmyadmin.net/home_page/security/PMASA-2011-20.php>`_: XSS in export.
 
 2011-11-10 Andreas Beutel - Version 4.11.9
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.4.7.1)
+- [TASK] Update pMA to the latest stable release (3.4.7.1)
 - [SECURITY] Security fixes
 - `PMASA-2011-17 <http://www.phpmyadmin.net/home_page/security/PMASA-2011-17.php>`_: Local file inclusion.
 
 2011-10-23 Andreas Beutel - Version 4.11.8
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.4.7)
+- [TASK] Update pMA to the latest stable release (3.4.7)
 - Version number 4.11.7 was skipped due an erroneous upload in EM
 
 2011-10-16 Andreas Beutel - Version 4.11.6
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.4.6)
+- [TASK] Update pMA to the latest stable release (3.4.6)
 - [SECURITY] Security fixes
 - `PMASA-2011-15 <http://www.phpmyadmin.net/home_page/security/PMASA-2011-15.php>`_: Local path disclosure vulnerability
 - `PMASA-2011-16 <http://www.phpmyadmin.net/home_page/security/PMASA-2011-16.php>`_: XSS in setup (host/verbose parameter)
 
 2011-09-14 Andreas Beutel - Version 4.11.5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.4.5)
+- [TASK] Update pMA to the latest stable release (3.4.5)
 - [SECURITY] Security fixes
 - `PMASA-2011-14 <http://www.phpmyadmin.net/home_page/security/PMASA-2011-14.php>`_: Multiple XSS
 
 2011-08-24 Andreas Beutel - Version 4.11.4
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.4.4)
+- [TASK] Update pMA to the latest stable release (3.4.4)
 - [SECURITY] Security fixes
 - `PMASA-2011-13 <http://www.phpmyadmin.net/home_page/security/PMASA-2011-13.php>`_: Multiple XSS in the Tracking feature
 
 2011-07-23 Andreas Beutel - Version 4.11.3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.4.3.2)
+- [TASK] Update pMA to the latest stable release (3.4.3.2)
 - [SECURITY] Security fixes
 - `PMASA-2011-9 <http://www.phpmyadmin.net/home_page/security/PMASA-2011-9.php>`_: XSS in table Print view
 - `PMASA-2011-10 <http://www.phpmyadmin.net/home_page/security/PMASA-2011-10.php>`_: Local file inclusion
@@ -395,7 +403,7 @@ The following is an overview of the changes in this extension. For more details 
 
 2011-07-03 Andreas Beutel - Version 4.11.2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.4.3.1)
+- [TASK] Update pMA to the latest stable release (3.4.3.1)
 - [SECURITY] Security fixes
 - `PMASA-2011-5 <http://www.phpmyadmin.net/home_page/security/PMASA-2011-5.php>`_: Fixed possible session manipulation in swekey authentication
 - `PMASA-2011-6 <http://www.phpmyadmin.net/home_page/security/PMASA-2011-6.php>`_: Fixed possible code injection incase session variables are compromised
@@ -407,7 +415,7 @@ The following is an overview of the changes in this extension. For more details 
 
 2011-05-21 Andreas Beutel - Version 4.11.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.4.1)
+- [TASK] Update pMA to the latest stable release (3.4.1)
 - [SECURITY] Security fix (PMASA-2011-3)
 
 2011-03-07 Andreas Beutel - Version 4.10.3
@@ -420,7 +428,7 @@ The following is an overview of the changes in this extension. For more details 
 
 2011-02-26 Andreas Beutel - Version 4.10.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.3.9.2)
+- [TASK] Update pMA to the latest stable release (3.3.9.2)
 - [FEATURE] IP-Access restrictions in extension configuration (Thanks to Søren Malling!)
 - [FEATURE] TYPO3 4.5 compatibility
 - [CHANGE] Disabled the TYPO3 theme until next update
@@ -428,7 +436,7 @@ The following is an overview of the changes in this extension. For more details 
 2010-08-20 Andreas Beutel - Version 4.9.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [SECURITY] Security fix (`PMASA-2010-5 and TYPO3-SA-2010-017) <http://www.phpmyadmin.net/home_page/security/PMASA-2010-5 and TYPO3-SA-2010-017).php>`_: Several XSS vulnerabilities were found in the code.
-- [FEATURE] Updated pMA to the latest stable release (3.3.5.1)
+- [TASK] Update pMA to the latest stable release (3.3.5.1)
 
 2010-07-28 Andreas Beutel - Version 4.8.1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -436,7 +444,7 @@ The following is an overview of the changes in this extension. For more details 
 
 2010-03-05 Andreas Beutel - Version 4.8.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.2.5)
+- [TASK] Update pMA to the latest stable release (3.2.5)
 - [BUGFIX] Fixed #13481: Get signon uri for redirect (initial patch provided by Michael Klapper, thanks!)
 - [BUGFIX] Follow-up/Changed: Using vars $extPath and ``$typo3DocumentRoot``
 
@@ -457,7 +465,7 @@ The following is an overview of the changes in this extension. For more details 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [BUGFIX] Fixed #12056: Wrong calculation of $BACK\_PATH
 - [BUGFIX] Workaround for #12057: Empty MySQL password blocks EXT:phpmyadmin
-- [FEATURE] Updated pMA to the latest stable release (3.2.3)
+- [TASK] Update pMA to the latest stable release (3.2.3)
 - [FEATURE] Added custom TYPO3 theme
 
 2009-11-19 Andreas Beutel - Version 4.6.0
@@ -467,30 +475,30 @@ The following is an overview of the changes in this extension. For more details 
 2009-10-20 Andreas Beutel - Version 4.5.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [SECURITY] Security fix (`PMASA-2009-6) <http://www.phpmyadmin.net/home_page/security/PMASA-2009-6).php>`_: XSS and SQL injection vulnerabilities
-- [FEATURE] Updated pMA to the latest stable release (3.2.2.1)
-- [FEATURE] Updated the manual to latest documentation template
+- [TASK] Update pMA to the latest stable release (3.2.2.1)
+- [TASK] Update the manual to latest documentation template
 
 2009-06-15 Andreas Beutel - Version 4.4.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.2.0)
+- [TASK] Update pMA to the latest stable release (3.2.0)
 - [BUGFIX] Fixed a bug: Logoff in 4.3.x did not work since directory name was wrong
 
 2009-03-24 Andreas Beutel - Version 4.3.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [SECURITY] Security fix (`PMASA-2009-3) <http://www.phpmyadmin.net/home_page/security/PMASA-2009-3).php>`_: Insufficient output sanitizing when generating configuration file.
-- [FEATURE] Updated pMA to the latest stable release (3.1.3.1)
+- [TASK] Update pMA to the latest stable release (3.1.3.1)
 
 2008-12-14 Andreas Beutel - Version 4.2.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [SECURITY] Security fix (`PMASA-2008-10) <http://www.phpmyadmin.net/home_page/security/PMASA-2008-10).php>`_: SQL injection through XSRF on several pages
-- [FEATURE] Updated pMA to the latest stable release (3.1.1)
+- [TASK] Update pMA to the latest stable release (3.1.1)
 - [CHANGE] Changed extension config: Set 'clearcacheonload' to 0
 - [CHANGE] Renamed ChangeLog to ChangeLog.txt
 
 2008-11-01 Andreas Beutel - Version 4.1.1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [SECURITY] Security fix (`PMASA-2008-9) <http://www.phpmyadmin.net/home_page/security/PMASA-2008-9).php>`_: XSS in a Designer component
-- [FEATURE] Updated pMA to the latest stable release (3.0.1.1)
+- [TASK] Update pMA to the latest stable release (3.0.1.1)
 - [FEATURE] Configuration: Restored the default behavior of the left navigation frame. Set link to sql.php - Thanks to Julian Hofman for pointing me to this option.
 
 2008-10-25 Andreas Beutel - Version 4.1.0
@@ -505,20 +513,20 @@ The following is an overview of the changes in this extension. For more details 
 
 2008-09-28 Andreas Beutel - Version 4.0.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- [FEATURE] Updated pMA to the latest stable release (3.0.0)
+- [TASK] Update pMA to the latest stable release (3.0.0)
 - [CHANGE] Branching the pMA extension into two branches: The 3.x series with PHP4 support and the 4.x series with a minimum requirement of MySQL 5, PHP5 (5.2 and above)
 - [CHANGE] Old (3.x) versions may be obtained at https://www.mehrwert.de/content-management/typo3-extensions/
 
 2008-09-22 Andreas Beutel - Version 3.4.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [SECURITY] Security fix (`PMASA-2008-8) <http://www.phpmyadmin.net/home_page/security/PMASA-2008-8).php>`_: XSS in MSIE using NUL byte
-- [FEATURE] Updated pMA to the latest stable release (2.11.9.2)
+- [TASK] Update pMA to the latest stable release (2.11.9.2)
 
 2008-09-15 Andreas Beutel - Version 3.3.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Skipping 3.2.0 see below
 - [SECURITY] Security fix (`PMASA-2008-7) <http://www.phpmyadmin.net/home_page/security/PMASA-2008-7).php>`_: Code execution vulnerability
-- [FEATURE] Updated pMA to the latest stable release (2.11.9.1)
+- [TASK] Update pMA to the latest stable release (2.11.9.1)
 
 2008-06-25 Andreas Beutel - Version 3.1.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

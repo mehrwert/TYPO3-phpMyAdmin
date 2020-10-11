@@ -1,5 +1,5 @@
 /.idea
-/.php_cs.dist
+/.php_cs.cache
 /atlassian-ide-plugin.xml
 Build
 /Vendor/*/tmp/
