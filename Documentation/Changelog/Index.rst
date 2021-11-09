@@ -8,6 +8,14 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2021-11-11 Andreas Beutel - Version 6.0.0
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [!!!][TASK] Update pMA to the latest stable 5.1.x release (5.1.1)
+- [!!!][TASK] Add support for PHP 7.4 (and drop support < PHP 7.2)
+- [!!!][FEATURE] Add support for TYPO3 11 (and drop support < TYPO3 9.5)
+- [BUGFIX] Allow symlinks in subfolders - GH#50 (thanks to bmack for reporting and fixing this)
+- [BUGFIX] Define extension key in composer.json - GH#52 (thanks to jpgreth for reporting and fixing this)
+
 2020-10-10 Andreas Beutel - Version 5.6.4
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [TASK] Update pMA to the latest stable 4.9.x release (4.9.6)
