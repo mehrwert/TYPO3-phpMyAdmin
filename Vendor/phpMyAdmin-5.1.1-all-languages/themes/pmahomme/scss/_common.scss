@@ -1,5 +1,7 @@
 #page_content {
   margin: 0 0.5em;
+  max-height: calc(100vh - 75px);
+  overflow: auto;
 }
 
 .auth_config_tbl {
