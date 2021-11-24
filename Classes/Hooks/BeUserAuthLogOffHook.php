@@ -15,6 +15,7 @@ namespace Mehrwert\Phpmyadmin\Hooks;
  */
 
 use Mehrwert\Phpmyadmin\Utility\EnvironmentUtility;
+use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 /**
@@ -34,7 +35,7 @@ class BeUserAuthLogOffHook
      */
     public function pmaLogOff($params = [], $ref = null)
     {
-        if (isset($GLOBALS['PHP_UNIT_TEST_RUNNING']) === false) {
+        if ($ref instanceof BackendUserAuthentication && isset($GLOBALS['PHP_UNIT_TEST_RUNNING']) === false) {
             // Define the cookie path
             $cookiePath = substr(
                 ExtensionManagementUtility::extPath('phpmyadmin'),
