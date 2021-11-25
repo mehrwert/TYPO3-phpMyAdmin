@@ -8,6 +8,10 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2021-11-25 Andreas Beutel - Version 6.0.1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [BUGFIX] Only set PHPMyAdmin cookie for BE Users - GH #57 (thanks to bmack for reporting and fixing this)
+
 2021-11-11 Andreas Beutel - Version 6.0.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [!!!][TASK] Update pMA to the latest stable 5.1.x release (5.1.1)
