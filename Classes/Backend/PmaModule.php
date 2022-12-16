@@ -71,10 +71,8 @@ class PmaModule
         $this->MCONF = $MCONF;
 
         // Get config
-        $extensionConfiguration = unserialize(
-            $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin'],
-            ['allowed_classes' => false]
-        );
+        $extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class)->get('phpmyadmin');
+
 
         // IP-based Access restrictions
         $devIPmask = trim($GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask']);
