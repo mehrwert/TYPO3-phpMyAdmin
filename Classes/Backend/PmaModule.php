@@ -140,7 +140,7 @@ class PmaModule
             }
 
             // Configure some other parameters
-            $_SESSION['PMA_extConf'] = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin'];
+            $_SESSION['PMA_extConf'] = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class)->get('phpmyadmin');
             $_SESSION['PMA_hideOtherDBs'] = $extensionConfiguration['hideOtherDBs'];
 
             // Get signon uri for redirect
