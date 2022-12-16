@@ -22,7 +22,7 @@ $extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\
 
 
 // Check for IP restriction (devIpMask), and die if not allowed
-$showPhpMyAdminInWebModule = (boolean)$extensionConfiguration['showPhpMyAdminInWebModule'];
+$showPhpMyAdminInWebModule = isset($extensionConfiguration['showPhpMyAdminInWebModule']) ? (boolean)$extensionConfiguration['showPhpMyAdminInWebModule'] : [];
 
 // If the backend is loaded, add the module
 if (TYPO3_MODE == 'BE') {
