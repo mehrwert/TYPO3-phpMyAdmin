@@ -8,6 +8,13 @@ Change Log
 
 The following is an overview of the changes in this extension. For more details `read the online log <https://github.com/mehrwert/TYPO3-phpMyAdmin>`_.
 
+2023-02-08 Andreas Beutel - Version 6.1.0
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [TASK] Update pMA to the latest stable 5.2.x release (5.2.1)
+- [SECURITY] Includes moderate vendor security fix
+- `PMASA-2023-1 <https://www.phpmyadmin.net/security/PMASA-2023-1/>`_: XSS vulnerability in drag-and-drop upload
+- [TASK] Add .ddev configuration
+
 2021-11-25 Andreas Beutel - Version 6.0.1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - [BUGFIX] Only set PHPMyAdmin cookie for BE Users - GH #57 (thanks to bmack for reporting and fixing this)
