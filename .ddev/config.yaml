@@ -1,0 +1,22 @@
+name: phpmyadmin
+type: php
+docroot: ~
+no_project_mount: true
+php_version: "8.1"
+composer_version: "2"
+webserver_type: apache-fpm
+router_http_port: "80"
+router_https_port: "443"
+xdebug_enabled: false
+additional_hostnames:
+    - docs.phpmyadmin
+    - v11.phpmyadmin
+    - v12.phpmyadmin
+additional_fqdns: []
+provider: default
+use_dns_when_possible: true
+omit_containers:
+    - dba
+extra_services:
+    - v11-data
+    - v12-data
