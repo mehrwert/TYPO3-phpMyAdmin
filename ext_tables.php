@@ -17,15 +17,6 @@ if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
 
-// Get config
-$extensionConfiguration = unserialize(
-    $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin'],
-    ['allowed_classes' => false]
-);
-
-// Check for IP restriction (devIpMask), and die if not allowed
-$showPhpMyAdminInWebModule = (boolean)$extensionConfiguration['showPhpMyAdminInWebModule'];
-
 // If the backend is loaded, add the module
 if (TYPO3_MODE == 'BE') {
     if (\TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version) >= 11000000) {
