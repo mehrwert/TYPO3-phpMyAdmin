@@ -23,13 +23,6 @@ namespace Mehrwert\Phpmyadmin\Utility;
 class EnvironmentUtility
 {
     /**
-     * The TYPO3 public web folder
-     *
-     * @var string
-     */
-    protected static $publicPath;
-
-    /**
      * The TYPO3 public web folder.
      *
      * Backwards compatibility with TYPO3 v8
@@ -38,15 +31,7 @@ class EnvironmentUtility
      */
     public static function getPublicPath()
     {
-        if (empty(self::$publicPath)) {
-            if (class_exists('\\TYPO3\\CMS\\Core\\Core\\Environment')) {
-                self::$publicPath = \TYPO3\CMS\Core\Core\Environment::getPublicPath();
-            } else {
-                self::$publicPath = rtrim(PATH_site, '/');
-            }
-        }
-
-        return self::$publicPath;
+        return \TYPO3\CMS\Core\Core\Environment::getPublicPath();
     }
 
     /**

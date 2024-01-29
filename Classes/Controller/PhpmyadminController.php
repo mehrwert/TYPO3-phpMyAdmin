@@ -1,4 +1,5 @@
 <?php
+
 namespace Mehrwert\Phpmyadmin\Controller;
 
 /*
@@ -14,19 +15,33 @@ namespace Mehrwert\Phpmyadmin\Controller;
  * The TYPO3 project - inspiring people to share!
  */
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+use Mehrwert\Phpmyadmin\Backend\PmaModule;
+use TYPO3\CMS\Backend\Attribute\AsController;
+use TYPO3\CMS\Core\Http\ApplicationType;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
-class PhpmyadminController extends ActionController
-{
-    /**
-     * Default action for backend module
-     *
-     * @return object
-     * @since 5.2.0
-     */
-    public function indexAction()
-    {
-        return GeneralUtility::makeInstance(\Mehrwert\Phpmyadmin\Backend\PmaModule::class);
-    }
+#[AsController]
+class PhpmyadminController extends ActionController {
+
+	private PmaModule $pmaModule;
+
+	public function __construct(PmaModule $pmaModule) {
+		$this->pmaModule = $pmaModule;
+	}
+
+	/**
+	 * Default action for backend module
+	 *
+	 * @return object
+	 * @since 5.2.0
+	 */
+	public function indexAction() {
+		// Proceed if BE loaded
+		if (ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isBackend()) {
+			$this->pmaModule->main();
+			return $this->htmlResponse($this->pmaModule->printContent());
+		} else {
+			die('<h1>Error</h1><p>The TYPO3 Backend is required for phpMyAdmin module but was not loaded.</p>');
+		}
+	}
 }
