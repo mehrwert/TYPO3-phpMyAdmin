@@ -8,6 +8,9 @@ execute any SQL statement - see http://www.phpmyadmin.net/
 
 ## Requirements and known issues
 
+Version 7.x of the TYPO3 phpMyAdmin extension includes the latest release of phpMyAdmin 5.x and is compatible
+w/ TYPO3 >= 12.4.
+
 Version 6.x of the TYPO3 phpMyAdmin extension includes the latest release of phpMyAdmin 5.x and is compatible
 w/ TYPO3 >= 9.5 and <= 11.5.
 

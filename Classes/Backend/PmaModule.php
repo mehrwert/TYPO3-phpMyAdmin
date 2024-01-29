@@ -15,11 +15,11 @@ namespace Mehrwert\Phpmyadmin\Backend;
  */
 
 use Mehrwert\Phpmyadmin\Utility\EnvironmentUtility;
+use Psr\Http\Message\ResponseFactoryInterface;
+use TYPO3\CMS\Core\Http\PropagateResponseException;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\HttpUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
-use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 
 /**
  * Utilities for the phpMyAdmin third party database administration Tool
@@ -37,16 +37,20 @@ class PmaModule
     public $MCONF = [];
 
     /**
-     * The backend document
-     * @var    \TYPO3\CMS\Backend\Template\DocumentTemplate
-     */
-    public $doc;
-
-    /**
      * Content of module if misconfigured
      * @var string
      */
     public $content = '';
+
+	/**
+	 * @var ResponseFactoryInterface
+	 */
+	private $responseFactory;
+
+	public function __construct(ResponseFactoryInterface $responseFactory)
+	{
+		$this->responseFactory = $responseFactory;
+	}
 
     /**
      * The main method of the backend module
@@ -162,6 +166,9 @@ class PmaModule
             } else {
                 $_SESSION['PMA_uploadDir'] = $extensionConfiguration['uploadDir'];
             }
+			if (!is_dir($_SESSION['PMA_uploadDir'])) {
+				GeneralUtility::mkdir_deep($_SESSION['PMA_uploadDir']);
+			}
             $_SESSION['PMA_typo3_db'] = $dbData['dbname'];
 
             // Get current session id
@@ -209,22 +216,18 @@ class PmaModule
                 header($header);
             }
 
-            HttpUtility::redirect(
-                $redirectUri,
-                HttpUtility::HTTP_STATUS_302
-            );
+			throw new PropagateResponseException(
+				$this->responseFactory->createResponse(302)->withAddedHeader('location', $redirectUri)
+			);
         } else {
-            // Render body
-            $this->doc = GeneralUtility::makeInstance('TYPO3\CMS\Backend\Template\DocumentTemplate');
-            $this->content = $this->doc->startPage($GLOBALS['LANG']->getLL('module.title'));
-            $this->content .= '<h1>' . $GLOBALS['LANG']->getLL('module.headline.error') . '</h1>';
+            // Render error
+            $this->content = '<h1>' . $GLOBALS['LANG']->getLL('module.title') . '</h1>';
+            $this->content .= '<h2>' . $GLOBALS['LANG']->getLL('module.headline.error') . '</h2>';
             // No configuration set
             $this->content .= '<p>' . sprintf(
                 $GLOBALS['LANG']->getLL('module.error.invalidConfiguration'),
                 $this->MCONF['PMA_subdir']
             ) . '</p>';
-            // End document
-            $this->content .= $this->doc->endPage();
         }
     }
 
@@ -233,21 +236,6 @@ class PmaModule
      */
     public function printContent()
     {
-        echo $this->content;
+        return $this->content;
     }
 }
-
-// Proceed if TYPO3_MODE is defined
-if (!defined('TYPO3_MODE')) {
-    die('<h1>Error</h1><p>Unable to determine TYPO3_MODE.</p>');
-}
-
-    // Proceed if BE loaded
-    if (TYPO3_MODE === 'BE') {
-        // Make instance:
-        $GLOBALS['SOBE'] = GeneralUtility::makeInstance(PmaModule::class);
-        $GLOBALS['SOBE']->main();
-        $GLOBALS['SOBE']->printContent();
-    } else {
-        die('<h1>Error</h1><p>The TYPO3 Backend is required for phpMyAdmin module but was not loaded.</p>');
-    }
