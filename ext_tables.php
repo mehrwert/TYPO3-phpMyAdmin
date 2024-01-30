@@ -18,13 +18,8 @@ if (!defined('TYPO3_MODE')) {
 }
 
 // Get config
-$extensionConfiguration = unserialize(
-    $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin'],
-    ['allowed_classes' => false]
-);
+$extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class)->get('phpmyadmin');
 
-// Check for IP restriction (devIpMask), and die if not allowed
-$showPhpMyAdminInWebModule = (boolean)$extensionConfiguration['showPhpMyAdminInWebModule'];
 
 // If the backend is loaded, add the module
 if (TYPO3_MODE == 'BE') {
