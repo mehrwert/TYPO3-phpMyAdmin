@@ -20,6 +20,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\HttpUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Core\Utility\VersionNumberUtility;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 
 /**
  * Utilities for the phpMyAdmin third party database administration Tool
@@ -71,10 +72,7 @@ class PmaModule
         $this->MCONF = $MCONF;
 
         // Get config
-        $extensionConfiguration = unserialize(
-            $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin'],
-            ['allowed_classes' => false]
-        );
+        $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('phpmyadmin');
 
         // IP-based Access restrictions
         $devIPmask = trim($GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask']);
@@ -85,9 +83,9 @@ class PmaModule
         if ($useDevIpMask === true) {
             // Abort if devIPmask is wildcarded
             if ($devIPmask != '*') {
-                $message = '<h1>' . $GLOBALS['LANG']->getLL('module.headline.accessDenied') . '</h1>
+                $message = '<h1>' . $GLOBALS['LANG']->sL('module.headline.accessDenied') . '</h1>
                             <p>' . sprintf(
-                    $GLOBALS['LANG']->getLL('module.message.accessDenied.devIpMask'),
+                    $GLOBALS['LANG']->sL('module.message.accessDenied.devIpMask'),
                     $remoteAddress,
                     $devIPmask
                 ) . '</p>';
@@ -100,9 +98,9 @@ class PmaModule
         // Check for ip restriction, and die if not allowed
         $allowedIps = trim($extensionConfiguration['allowedIps']);
         if (!empty($allowedIps)) {
-            $message = '<h1>' . $GLOBALS['LANG']->getLL('module.headline.accessDenied') . '</h1>
+            $message = '<h1>' . $GLOBALS['LANG']->sL('module.headline.accessDenied') . '</h1>
                         <p>' . sprintf(
-                $GLOBALS['LANG']->getLL('module.message.accessDenied.allowedIps'),
+                $GLOBALS['LANG']->sL('module.message.accessDenied.allowedIps'),
                 $remoteAddress,
                 $allowedIps
             ) . '</p>';
@@ -142,7 +140,7 @@ class PmaModule
             }
 
             // Configure some other parameters
-            $_SESSION['PMA_extConf'] = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['phpmyadmin'];
+            $_SESSION['PMA_extConf'] = $extensionConfiguration;
             $_SESSION['PMA_hideOtherDBs'] = $extensionConfiguration['hideOtherDBs'];
 
             // Get signon uri for redirect
@@ -216,11 +214,11 @@ class PmaModule
         } else {
             // Render body
             $this->doc = GeneralUtility::makeInstance('TYPO3\CMS\Backend\Template\DocumentTemplate');
-            $this->content = $this->doc->startPage($GLOBALS['LANG']->getLL('module.title'));
-            $this->content .= '<h1>' . $GLOBALS['LANG']->getLL('module.headline.error') . '</h1>';
+            $this->content = $this->doc->startPage($GLOBALS['LANG']->sL('module.title'));
+            $this->content .= '<h1>' . $GLOBALS['LANG']->sL('module.headline.error') . '</h1>';
             // No configuration set
             $this->content .= '<p>' . sprintf(
-                $GLOBALS['LANG']->getLL('module.error.invalidConfiguration'),
+                $GLOBALS['LANG']->sL('module.error.invalidConfiguration'),
                 $this->MCONF['PMA_subdir']
             ) . '</p>';
             // End document
